@@ -12,7 +12,8 @@ class AccountController extends CI_Controller
 	public function editAccountDisplay(){
 
 		$this->load->model('Auth_manager');
-		$userDetails=$this->Auth_manager->getUserDetails(1);
+		$userid= $this->session->userdata('usr_id');
+		$userDetails=$this->Auth_manager->getUserDetails($userid);
 
 		$Details =array(
 			'userDetails'=>$userDetails

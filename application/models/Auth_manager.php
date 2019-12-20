@@ -80,12 +80,12 @@ class Auth_manager extends CI_Model
 //
 //		return $data;
 
-
+       $userId= $this->session->userdata('usr_id');
 
 		//     echo $this->input->post('id');
 		//$slugKey=url_title($this->input->post('title'));
 
-		$this->db->where('id',1);
+		$this->db->where('id',$userId);
 		return $this->db->update('user', $details);
 
 
