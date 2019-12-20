@@ -13,7 +13,7 @@
 	<!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
 
 
-
+	<script type='text/javascript' src="--><?php //echo base_url(); ?><!--assets/jquery/qrscript.js"></script>
 
 	<!-- boostrap 4.0 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -41,7 +41,9 @@
 	<!-- Qr code scan -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-<!--	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>-->
+<!--	-->
+
+	<!--	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>-->
 <!--	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>-->
 <!--	<script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>-->
 <!--	<script src="../assets/script/firebase_init.js"></script>-->
@@ -163,7 +165,7 @@
 
 		<div class="ui-block-b">
 			<div class="ui-body ui-body-d">
-				<a href="#two" class="ui-btn ui-shadow ui-corner-all">Edit Account</a>
+				<a href="<?php echo base_url();?>index.php/AccountController/editAccountDisplay" class="ui-btn ui-shadow ui-corner-all" data-ajax="false">Edit Account</a>
 				<a href="<?php echo base_url(); ?>index.php/favouritescontroller" class="ui-btn ui-shadow ui-corner-all" data-ajax="false">Favourites</a>
 				<a href="#two" class="ui-btn ui-shadow ui-corner-all">Payment History</a>
 
@@ -174,9 +176,9 @@
 			<div class="ui-body ui-body-d">
 				<!-- <h4>AOL unveils Alto, an email service that syncs 5 accounts</h4>
 					<p>AOL, struggling to shed its outdated image, is reimagining one of the most visibly aging parts of its platform: Its email service. </p> -->
-				<a href="#two" class="ui-btn ui-shadow ui-corner-all">Leaderboard</a>
+				<a href="<?php echo base_url(); ?>index.php/LeaderboardController" class="ui-btn ui-shadow ui-corner-all" data-ajax="false">Leaderboard</a>
 				<a href="#popupqrcode" data-rel="popup" data-position-to="window"
-				   class="ui-btn ui-shadow ui-corner-all" data-transition="pop">Add Points</a>
+				   class="ui-btn ui-shadow ui-corner-all" data-transition="pop" >Add Points</a>
 				<!-- <a href="#two" id="logoutbtn" class="ui-btn ui-shadow ui-corner-all"
 					style="background-color: #FE6311 !important; color: white !important;">Logout</a> -->
 
@@ -191,6 +193,8 @@
 				<!--         <div style="padding:10px 20px;"> -->
 				            <h3>Scan Recipt</h3>
 				<video id="preview"></video>
+
+
 				<script type="text/javascript">
                     let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
                     scanner.addListener('scan', function (content) {

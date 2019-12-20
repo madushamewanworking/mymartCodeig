@@ -1,5 +1,7 @@
 <?php
 
+include_once ('User.php');
+
 
 class Auth_manager extends CI_Model
 {
@@ -46,6 +48,46 @@ class Auth_manager extends CI_Model
 //			setcookie("aa",$result['id']);
 			return false;
 		}
+
+	}
+
+
+	public function getUserDetails($userId){
+		$this->db->select('user.*');
+		$this->db->from('user');
+		//	$this->db->join('user', 'posts.userId = user.id');
+		$this->db->where('user.id',$userId);
+		//	$this->db->order_by('createdDate', 'DESC');
+
+		$query= $this->db->get();
+		$userDetails=array();
+		if($query->num_rows() !=0){
+
+			foreach ($query->result() as $catRow){
+				$userDetails[]=new User($catRow->id, $catRow->address,$catRow->email, $catRow->username, $catRow->imagelink);
+			}
+			return $userDetails;
+		}else{
+			return $userDetails;
+		}
+	}
+
+	public function userEdit($details)
+	{
+
+//		$data=$this->db->insert('user',$details);
+//		//$insert_id = $this->db->insert_id();
+//
+//		return $data;
+
+
+
+		//     echo $this->input->post('id');
+		//$slugKey=url_title($this->input->post('title'));
+
+		$this->db->where('id',1);
+		return $this->db->update('user', $details);
+
 
 	}
 

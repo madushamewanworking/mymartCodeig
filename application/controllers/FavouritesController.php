@@ -15,8 +15,6 @@ class FavouritesController extends CI_Controller
 			'favourites'=>$favDetails
 		);
 
-		print_r($favDetails);
-
 		$this->load->view('pages/favouritesPage',$Details);
 	}
 }
