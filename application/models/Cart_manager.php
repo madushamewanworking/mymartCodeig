@@ -13,7 +13,7 @@ class Cart_manager extends CI_Model
 			'proname' => $this->input->post('name'),
 			'proprice' => $this->input->post('price'),
 			'proimagelink' => $this->input->post('image'),
-			'user_id' => $this->session-userdata('usr_id')
+			'user_id' => $this->session->userdata('usr_id')
 		);
 
 		return $this->db->insert('cart', $inputData);

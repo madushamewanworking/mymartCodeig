@@ -178,7 +178,7 @@
 	<div data-role="header">
 		<a data-rel="back"
 		   class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" rel="external">Back</a>
-		<label for="title" class="title">Edit Account</label>
+		<label for="title" class="title">LEADERBOARD</label>
 		<!-- <a href="#" data-icon="check">Save</a> -->
 	</div>
 
