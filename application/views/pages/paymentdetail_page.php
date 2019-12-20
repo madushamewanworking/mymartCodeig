@@ -56,24 +56,28 @@
 	<link rel="stylesheet" href="../assets/themes/theam1/jquery.mobile.icons.min.css" /> -->
 	<!-- <link rel="stylesheet" href="../assets/themes/theam2/themes/team_e_orange.css" />
 	<link rel="stylesheet" href="../assets/themes/theam2/themes/jquery.mobile.icons.min.css" /> -->
+<style>
+	.flat a.active,.flat a.active:after{
+		background-color: #A2C432 !important;
 
+
+	}
+</style>
 	<title>Document</title>
-	<script type="text/javascript">
 
-	</script>
 </head>
 
 <body>
 <div data-role="page" id="demo-page" class="my-page" data-url="demo-page" >
 	<!-- header start -->
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
 		<div class="ui-grid-a">
 			<div class="ui-block-a">
 				<!-- <div class="ui-bar ui-bar-a" style="height:30px">Block A</div> -->
 				<!-- <a class="ui-link" href="" > <img id="Logo" src="../assets/images/res/Logo.png"> </a> -->
 				<!-- <a href="info.html" data-icon="info-page" class="ui-btn-right" data-transition="flip" data-iconpos="notext" data-theme="a"></a> -->
 				<!-- <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-myicon"> -->
-				<img src="../assets/images/res/Logo.png" alt="Logo, Facebook" class="logo"
+				<img src="<?php echo base_url(); ?>/assets/images/res/Logo.png" alt="Logo, Facebook" class="logo"
 					 style="float:left; display:inline; width: 36%;" />
 			</div>
 			<div class="ui-block-b">
@@ -82,21 +86,22 @@
 						<div class="ui-bar ui-bar-a" style="height:35px">
 
 							<!-- <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a> -->
-
-							<a href="#positionWindow" id="popupPadded" data-icon="search" data-rel="popup"
-							   data-theme="a" data-overlay-theme="a" data-position-to="window"
-							   class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">Search</a>
+							<?php if(!$this->session->userdata('login_status')) :?>
+								<a href="#positionWindow" id="popupPadded" data-icon="search" data-rel="popup"
+								   data-theme="a" data-overlay-theme="a" data-position-to="window"
+								   class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">Search</a>
+							<?php endif; ?>
 
 							<div data-role="popup" data-theme="a" data-overlay-theme="b" data-transition="slidedown"
 								 id="positionWindow" class="ui-corner-all">
-								<div style="padding:10px 20px;">
-									<h3>Search for Products</h3>
-									<label for="un" class="ui-hidden-accessible">Username:</label>
-									<input type="text" name="user" id="un" value="" placeholder="username"
-										   data-theme="a">
-
-									<button type="submit"
-											class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-search">SEARCH</button>
+								<div style="padding:10px 20px;" class="pop">
+									            <h3>Search for Products</h3>
+									            <label for="un" class="ui-hidden-accessible"></label>
+									            <input type="text" name="user" id="un" value=""
+													   placeholder="What Are You Looking For?" data-theme="a">
+									           
+									            <button type="submit"
+														class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-search">SEARCH</button>
 								</div>
 							</div>
 
@@ -106,10 +111,22 @@
 
 						 
 						<div class="ui-grid-b">
-							<div class="ui-block-a"></div>
+							<div class="ui-block-a" >
+
+							</div>
 							<div class="ui-block-b">  
-								<button id="nav_des"
-										class="ui-btn-right ui-btn ui-btn-a ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-eye ui-nodisc-icon">LOGIN</button>
+
+								<?php if(!$this->session->userdata('login_status')) :?>
+
+									<a id="nav_des" href="<?php echo base_url(); ?>index.php/auth/login_user" rel="external" data-role="button" rel=external class="ui-btn-right ui-btn ui-btn-a ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-eye ui-nodisc-icon">LOGIN</a>
+								<?php endif; ?>
+								<!--									<a id="nav_des_acc" href="--><?php //echo base_url(); ?><!--index.php/accountcontroller" rel="external" data-role="button" rel=external class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-notext ui-corner-all" >ACCOUNT</a>-->
+								<?php if($this->session->userdata('login_status')) :?>
+									<a href="#positionWindow" id="popupPadded" data-icon="search" data-rel="popup"
+									   data-theme="a" data-overlay-theme="a" data-position-to="window"
+									   class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">Search</a>
+								<?php endif; ?>
+								<!--  <a id="nav_des_acc" data-role="button" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-user">SEARCH</a> -->
 							</div>
 							<div class="ui-block-c"></div>
 						</div><!-- /grid-b -->
@@ -117,13 +134,14 @@
 
 
 						<!-- <div class="ui-bar ui-bar-a" style="height:50px" ui-btn-right>
-							<a href="index.html" data-icon="eye"data-theme="a" class="ui-nodisc-icon">login</a>
-						</div> -->
+						<a href="index.html" data-icon="eye"data-theme="a" class="ui-nodisc-icon">login</a>
+					</div> -->
 					</div>
 				</div>
 
 			</div>
 		</div>
+
 	</div>
 	<!-- header end -->
 <!--	<div data-role="header">-->
@@ -134,12 +152,13 @@
 
 	<!-- slide show start -->
 
-
 	<div class="breadcrumb flat">
 		<a href="#">Cart</a>
-		<a href="#" class="active">Payment Details</a>
+		<a href="#" class="active">Payment Detail</a>
 		<a href="#">Confirmation</a>
 	</div>
+	<script src="http://thecodeplayer.com/uploads/js/prefixfree-1.0.7.js" type="text/javascript" type="text/javascript"></script>
+
 	<!-- slide show end -->
 
 
@@ -237,31 +256,6 @@
                     }).catch(function (e) {
                         console.error(e);
                     });
-                    $( document ).ready(function() {
-                        var $form = $('#frmBooking');
-                        var handler = StripeCheckout.configure({
-                            key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
-                            token: function (token) {
-                                if (token.id) {
-                                    $("#thankyouPayment").html("Thank you")
-                                }
-                            }
-                        })
-                        // alert("hello");
-
-                        $('#customButton').on('click', function (e) {
-                            handler.open({
-                                name: 'Demo Site',
-                                currency: 'LKR',
-                                description: $('#item_name').val(),
-                                amount: $('#item_value').val() * 100
-                            });
-                            // alert("hello");
-                            $(window).on('popstate', function () {
-                                handler.close();
-                            });
-                        });
-                    });
 				</script>
 
 				<!--         </div> -->
@@ -287,13 +281,38 @@
 	<div data-role="footer" data-id="foo1" data-position="fixed">
 
 		<!-- <div class="my-btn" data-postion="fixed"> -->
-		<form id="frmBooking" name="bookingForm" action="post" action="_self">
+		<form id="frmBooking" name="bookingForm" method="post" action="_self"  >
 			<a data-role="button" class="cart-btn my-btn" id="customButton"
 			   style="background-color: #fe6311 !important; height: 40px  !important;  margin-bottom: 0px !important;  margin-top: 0px !important; color:white !important;">
 				PROCEED TO CHECKOUT
 			</a>
 		</form>
+		<script type="text/javascript">
+            jQuery(function($){
+                var $form = $('#frmBooking');
+                var handler = StripeCheckout.configure({
+                    key:'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+                    token : function(token){
+                        if(token.id){
+                            $("#thankyouPayment").html("Thank you")
+                        }
+                    }
+                })
 
+                $('#customButton').on('click', function(e) {
+                    handler.open({
+                        name : 'Demo Site',
+                        currency: 'LKR',
+                        description: $('#item_name').val(),
+                        amount: $('#item_value').val() * 100
+                    });
+
+                    $(window).on('popstate', function(){
+                        handler.close();
+                    });
+                });
+            });
+		</script>
 
 		<div align="center" id="thankyouPayment">
 

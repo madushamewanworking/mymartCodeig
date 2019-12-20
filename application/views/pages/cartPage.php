@@ -149,8 +149,11 @@
 
 		.flat a.active,.flat a.active:after{
 			background-color: #A2C432 !important;
-			color: #FE6311;
+			color: black;
 
+		}
+		#a{
+		color: black;
 		}
 	</style>
 
@@ -236,9 +239,9 @@
 
 
 		<div class="breadcrumb flat">
-			<a href="#"class="active">Cart</a>
-			<a href="#">Payment Details</a>
-			<a href="#">Confirmation</a>
+			<a href="#"class="active" id="a">Cart</a>
+			<a href="#" id="a">Payment Details</a>
+			<a href="#" id="a">Confirmation</a>
 		</div>
 
 		<!-- Prefixfree -->
@@ -263,7 +266,7 @@
 
 	<!-- /header -->
 	<div role="main" class="ui-content">
-		<form id="dataform" method="post">
+		<form id="dataform" method="post" data-ajax="false">
 		<ul data-role="listview" id="class-list">
 
 
@@ -325,8 +328,7 @@
 <!--			<div class="ui-block-a" data-position="fixed"><div class="ui-bar ui-bar-a bottom-tag text-center" style="height:60px"><p><span>Total</span> Rs.1500.00</p></div></div>-->
 
 <!--			<div data-position="fixed"><div class="ui-bar ui-bar-a bottom-tag text-center" style="height:60px"><button type="submit" form="dataform" class="ui-btn ui-btn-inline pay btn btn-default btn-lg" style="height: 50px;margin-bottom: 20px; width: 200px"  formaction="--><?php //echo base_url('index.php/cartcontroller/checkproduct'); ?><!-- " data-ajax="false" >Check Out</button></div></div>-->
-			<button  class="cart-btn my-btn" id="customButton" type="submit" form="dataform" formaction="<?php echo base_url('index.php/cartcontroller/checkproduct'); ?> " data-ajax="false"
-			   style="background-color: #fe6311 !important; height: 40px  !important;  margin-bottom: 0px !important;  margin-top: 0px !important; color:white !important;">
+			<button  class="cart-btn my-btn" id="customButton" type="submit" form="dataform" formaction="<?php echo base_url('index.php/cartcontroller/checkproduct'); ?> "  style="background-color: #fe6311 !important; height: 40px  !important;  margin-bottom: 0px !important;  margin-top: 0px !important; color:white !important;">
 				PICK & PAY
 			</button>
 		</div>

@@ -232,9 +232,11 @@
 
 							<!-- <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a> -->
 
-							<a href="#positionWindow" id="popupPadded" data-icon="search" data-rel="popup"
-							   data-theme="a" data-overlay-theme="a" data-position-to="window"
-							   class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">Search</a>
+							<?php if(!$this->session->userdata('login_status')) :?>
+								<a href="#positionWindow" id="popupPadded" data-icon="search" data-rel="popup"
+								   data-theme="a" data-overlay-theme="a" data-position-to="window"
+								   class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">Search</a>
+							<?php endif; ?>
 
 							<div data-role="popup" data-theme="a" data-overlay-theme="b" data-transition="slidedown"
 								 id="positionWindow" class="ui-corner-all">
