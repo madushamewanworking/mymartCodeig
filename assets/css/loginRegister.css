@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');  
+
+.ui-page-theme-a {
+    background-color: white !important;
+}
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family:'Century Gothic','Futura','Didact Gothic',san-serif;
+
+    background-color: white !important;
+}
+
+.logo{
+    display: block;
+  width: 200px;
+  height: 150px;
+ margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+ #main{
+     width: 90%;
+     margin: 20px auto;
+ }
+ #tab-btn{
+    
+     display: -webkit-flex;
+     display: -moz-flex;
+     display: -ms-flex;
+     display: -o-flex;
+     display: flex;
+     
+     width: 100%;
+     justify-content: center;
+ }
+
+
+ .ui-page-theme-a .ui-btn{
+    color: white !important;
+    background-color: #FE6311 !important;
+ }
+ 
+ .register,.login{
+     margin-top: 5px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    
+    font-size: 25px;
+    padding: 5px;
+  
+    
+}
+
+
+a.login{
+    color: #f7d5c3 !important;
+}
+a.register{
+    color: #f7d5c3 !important;
+}
+a.register.active{
+    color: #FE6311 !important;
+}
+a.login.active{
+    color: #FE6311 !important;
+}
+.active{
+    background-color: #eee;
+     color: #000;
+}
+.content,.other{
+    width: 100%;
+    background-color: white;
+    padding: 20px 30px 30px 30px;
+    box-shadow: 2px 2px 5px white;
+}
+.other{
+    display: none;
+}
+.inp{
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 5px;
+    font-size: 20px;
+    border: 2px blacj;
+    border-bottom: 5px solid white;
+    background-color: #fff;
+    color: white;
+}
+.inp:focus{
+    outline: none;
+    border: 2px solid white;
+    border-bottom: 5px solid white;
+}
+.sub-btn{
+    width: 100%;
+    padding: 12px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #FE6311 !important;
+    color: white !important;
+    cursor: pointer;
+    /* border-bottom: 5px solid #444; */
+}
+#sub-btn:focus{
+    outline: none;
+}
+#sub-btn:active{
+    border: none;
+    background-color:orange ;
+    margin-top: 5px;
+}
+
+input[type="text"]{
+    border: 0;
+    outline: 0;
+    background: transparent;
+    /* border-bottom: 1px solid black; */
+}
+
+/* responsive grid */
+.rwd-example .ui-body {
+
+    text-align: left;
+    /* border-color: turquoise; */
+    background-color: #F0F5F2;
+     font-family:'Century Gothic','Futura','Didact Gothic',san-serif;
+}
+.rwd-example p {
+    color: #777;
+    line-height: 140%
+}
+/* Stack all blocks to start */
+.rwd-example .ui-block-a,
+.rwd-example .ui-block-b{
+    width: 100%;
+    float: none;
+}
+/* Collapsing borders */
+.rwd-example > div + div .ui-body {
+    border-top-width: 0;
+}
+/* 1st breakpoint - Float B and C, leave A full width on top */
+@media all and (min-width: 672px) {
+    .rwd-example {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    }
+    .rwd-example .ui-body {
+       min-height: 14em;
+    }
+    .rwd-example .ui-block-b,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 49.95%;
+    }
+    .rwd-example .ui-block-b p,
+    .rwd-example .ui-block-c p {
+      font-size: .8em;
+    }
+    .rwd-example > div + div .ui-body {
+        border-top-width: 1px;
+    }
+    .rwd-example > div:first-child .ui-body {
+        border-bottom-width: 0;
+    }
+    .rwd-example > div:last-child .ui-body {
+        border-left-width: 0;
+    }
+}
+/* ihone landscape */
+@media all and (min-width: 660px) {
+    .rwd-example {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    }
+    .rwd-example .ui-body {
+       min-height: 14em;
+    }
+    .rwd-example .ui-block-a,
+    .rwd-example .ui-block-b {
+      float: left;
+      width: 49.95%;
+    }
+   
+    .rwd-example > div + div .ui-body {
+        border-top-width: 1px;
+    }
+    .rwd-example > div:first-child .ui-body {
+        border-bottom-width: 0;
+    }
+    .rwd-example > div:last-child .ui-body {
+        border-left-width: 0;
+    }
+}
+/* ipod landscape */
+@media all and (min-width: 660px) {
+    .rwd-example {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    }
+    .rwd-example .ui-body {
+       min-height: 14em;
+
+    }
+    .rwd-example .ui-block-a,
+    .rwd-example .ui-block-b,
+    .rwd-example .ui-block-c,
+    .rwd-example .ui-block-d {
+      float: left;
+      width: 47.95%;
+    }
+    .logo{
+        display: block;
+      width: 250px;
+      height: 150px;
+      margin-top: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    
+    }
+
+    #main{
+        width: 90%;
+        margin: 10px auto;
+    }
+    
+    .rwd-example > div + div .ui-body {
+        border-top-width: 1px;
+    }
+    .rwd-example > div:first-child .ui-body {
+        border-bottom-width: 0;
+    }
+    .rwd-example > div:last-child .ui-body {
+        border-left-width: 0;
+    }
+}
+/* ipad potrait */
+@media only screen and (min-width: 760px)  {
+    .rwd-example .ui-body {
+       min-height: 16em;
+    }
+    .rwd-example .ui-block-a,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 49.95%;
+    }
+
+    .logo{
+        display: block;
+      width: 250px;
+      height: 150px;
+      margin-top: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    
+    }
+    .register,.login{
+        margin-top: 300px;
+       
+     
+       
+   }
+   
+    .rwd-example > div:first-child .ui-body {
+        border-bottom-width: 1px;
+    }
+    .rwd-example > div + div .ui-body {
+        border-left-width: 0;
+    }
+}
+/* ipad landscape */
+@media only screen and (min-width: 760px)  {
+    .rwd-example .ui-body {
+       min-height: 16em;
+    }
+    .rwd-example .ui-block-a,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 49.95%;
+    }
+
+    .logo{
+        display: block;
+      width: 250px;
+      height: 150px;
+      margin-top: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    
+    }
+    .register,.login{
+        margin-top: 200px;
+       
+     
+       
+   }
+   
+    .rwd-example > div:first-child .ui-body {
+        border-bottom-width: 1px;
+    }
+    .rwd-example > div + div .ui-body {
+        border-left-width: 0;
+    }
+}
+/* 3rd breakpoint - Bump up font size at very wide screens */
+@media all and (min-width: 75em) {
+    .rwd-example .ui-body {
+      font-size: 125%;
+    }
+    .rwd-example .ui-block-a,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 49.95%;
+    }
+    .rwd-example .ui-block-b,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 24.925%;
+    }
+   
+   }

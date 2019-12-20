@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Didact+Gothic'); 
+.ui-page.ui-page-active {
+    min-height: 100% !important;
+   
+  }
+
+  .ui-body{
+      padding: .4em 4em !important;
+      text-align: center;
+
+  }
+.card {
+    font-family:'Century Gothic','Futura','Didact Gothic',san-serif;
+    margin-top: 20px;
+    background-color: #f1f8fe;
+    border: 0px solid #fff;
+    display: block;
+    /* margin-left: 20%; */
+    margin-right: 20%;
+   
+  
+    min-height: 250px;
+    /* min-width: 100px; */
+    max-width: 240px;
+}
+.card img {
+border-radius: 100%; 
+padding-top: 5px;
+width: 110px;
+height: 100px;
+display: block;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+.ui-alt-icon {
+font-size: 21px ;
+
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+background-color: RoyalBlue;
+}
+
+
+
+.rwd-example .ui-body {
+
+    text-align: left;
+    /* border-color: turquoise; */
+    background-color: #F0F5F2;
+     font-family:'Century Gothic','Futura','Didact Gothic',san-serif;
+}
+.rwd-example p {
+    color: #777;
+    line-height: 140%
+}
+/* Stack all blocks to start */
+.rwd-example .ui-block-a,
+.rwd-example .ui-block-b,
+.rwd-example .ui-block-c,
+.rwd-example .ui-block-d{
+    width: 100%;
+    float: none;
+}
+/* Collapsing borders */
+.rwd-example > div + div .ui-body {
+    border-top-width: 0;
+}
+/* 1st breakpoint - Float B and C, leave A full width on top */
+@media all and (min-width: 672px) {
+    .rwd-example {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    }
+    .rwd-example .ui-body {
+       min-height: 14em;
+    }
+    .rwd-example .ui-block-b,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 49.95%;
+    }
+    .rwd-example .ui-block-b p,
+    .rwd-example .ui-block-c p {
+      font-size: .8em;
+    }
+    .rwd-example > div + div .ui-body {
+        border-top-width: 1px;
+    }
+    .rwd-example > div:first-child .ui-body {
+        border-bottom-width: 0;
+    }
+    .rwd-example > div:last-child .ui-body {
+        border-left-width: 0;
+    }
+}
+/* ihone landscape */
+@media all and (min-width: 660px) {
+    .rwd-example {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    }
+    .rwd-example .ui-body {
+       min-height: 14em;
+    }
+    .rwd-example .ui-block-a,
+    .rwd-example .ui-block-b {
+      float: left;
+      width: 49.95%;
+    }
+    .rwd-example .ui-block-c,
+    .rwd-example .ui-block-d {
+      float: left;
+      width: 49.95%;
+    }
+    
+    .rwd-example > div + div .ui-body {
+        border-top-width: 1px;
+    }
+    .rwd-example > div:first-child .ui-body {
+        border-bottom-width: 0;
+    }
+    .rwd-example > div:last-child .ui-body {
+        border-left-width: 0;
+    }
+}
+/* ipod landscape */
+@media all and (min-width: 660px) {
+    .rwd-example {
+        overflow: hidden; /* Use this or a "clearfix" to give the container height */
+    }
+    .rwd-example .ui-body {
+       min-height: 14em;
+
+    }
+    .rwd-example .ui-block-a,
+    .rwd-example .ui-block-b,
+    .rwd-example .ui-block-c,
+    .rwd-example .ui-block-d {
+      float: left;
+      width: 47.95%;
+    }
+    
+    
+    .rwd-example > div + div .ui-body {
+        border-top-width: 1px;
+    }
+    .rwd-example > div:first-child .ui-body {
+        border-bottom-width: 0;
+    }
+    .rwd-example > div:last-child .ui-body {
+        border-left-width: 0;
+    }
+}
+/* 2nd breakpoint - Float all, 50/25/25 */
+@media all and (min-width: 880) {
+    .rwd-example .ui-body {
+       min-height: 18em;
+    }
+    .rwd-example .ui-block-a,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 49.95%;
+    }
+    .rwd-example .ui-block-b,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 24.925%;
+    }
+    .rwd-example > div:first-child .ui-body {
+        border-bottom-width: 1px;
+    }
+    .rwd-example > div + div .ui-body {
+        border-left-width: 0;
+    }
+}
+/* 3rd breakpoint - Bump up font size at very wide screens */
+@media all and (min-width: 75em) {
+    .rwd-example .ui-body {
+      font-size: 125%;
+    }
+    .rwd-example .ui-block-a,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 49.95%;
+    }
+    .rwd-example .ui-block-b,
+    .rwd-example .ui-block-c {
+      float: left;
+      width: 24.925%;
+    }
+}
