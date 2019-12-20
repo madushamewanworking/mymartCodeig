@@ -49,4 +49,42 @@ class CartController extends CI_Controller
 //		redirect('maincontroller');
 
 	}
+
+
+	public function checkproduct(){
+		$data = $this->input->post('cartpro');
+//
+//		var_dump($data);
+//
+//		setcookie("hello","sdfdlhfsluuuuuuuu");
+
+
+
+//		setcookie("hello","sdfdlhfsluuuuuuuu");
+//		print_r("dfsgbshrfhassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssc");
+
+		$this->load->model('Cart_manager');
+		$productList=$this->Cart_manager->getChekedList($data);
+
+		$purchaseCount=count($productList);
+		$price=0;
+
+		setcookie("hello","$purchaseCount");
+
+		foreach ($productList as $d){
+			$price+=$d->getProductPrice()*$d->getProductCount();
+		}
+
+		$pay_data = array(
+			'count' => $purchaseCount,
+			'amount'=>$price,
+			'proList' => $productList
+		);
+
+		setcookie("price","$price");
+		$this->load->view('pages/paymentdetail_page',$pay_data);
+
+//		redirect('payementdetailcontroller');
+	}
+
 }

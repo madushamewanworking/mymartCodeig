@@ -13,8 +13,6 @@
 	<!-- <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
 
 
-
-
 	<!-- boostrap 4.0 -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -29,16 +27,14 @@
 			crossorigin="anonymous"></script>
 
 	<!-- main library -->
-	<link rel="stylesheet" href="<?php echo base_url();?>/assets/jquery/jquery.mobile-1.4.5.min.css" />
-	<link rel="stylesheet" href="<?php echo base_url();?>/assets/jquery/font-awesome.min.css" rel="stylesheet"
-		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-	<script src="<?php echo base_url();?>/assets/jquery/jquery-1.11.1.min.js"></script>
-	<script src="<?php echo base_url();?>/assets/jquery/jquery.mobile-1.4.5.min.js"></script>
-	<script src="<?php echo base_url();?>/assets/script/common.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/style.css" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/jquery/jquery.mobile-1.4.5.min.css"/>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/jquery/font-awesome.min.css" rel="stylesheet"
+		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"/>
+	<script src="<?php echo base_url(); ?>/assets/jquery/jquery-1.11.1.min.js"></script>
+	<script src="<?php echo base_url(); ?>/assets/jquery/jquery.mobile-1.4.5.min.js"></script>
+	<script src="<?php echo base_url(); ?>/assets/script/common.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/css/style.css"/>
 	<!-- <link rel="stylesheet" type="text/css" href="../assets/css/grid_category.css" /> -->
-
-
 
 
 	<!-- theam config -->
@@ -70,7 +66,7 @@
 				<!-- <a href="info.html" data-icon="info-page" class="ui-btn-right" data-transition="flip" data-iconpos="notext" data-theme="a"></a> -->
 				<!-- <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-myicon"> -->
 				<img src="../assets/images/res/Logo.png" alt="Logo, Facebook" class="logo"
-					 style="float:left; display:inline; width: 36%;" />
+					 style="float:left; display:inline; width: 36%;"/>
 			</div>
 			<div class="ui-block-b">
 				<div class="ui-grid-a ">
@@ -79,10 +75,10 @@
 
 							<!-- <a href="#" class="ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">No text</a> -->
 
-							<?php if(!$this->session->userdata('login_status')) :?>
-							<a href="#positionWindow" id="popupPadded" data-icon="search" data-rel="popup"
-							   data-theme="a" data-overlay-theme="a" data-position-to="window"
-							   class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">Search</a>
+							<?php if (!$this->session->userdata('login_status')) : ?>
+								<a href="#positionWindow" id="popupPadded" data-icon="search" data-rel="popup"
+								   data-theme="a" data-overlay-theme="a" data-position-to="window"
+								   class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">Search</a>
 							<?php endif; ?>
 							<div data-role="popup" data-theme="a" data-overlay-theme="b" data-transition="slidedown"
 								 id="positionWindow" class="ui-corner-all">
@@ -92,8 +88,11 @@
 									            <input type="text" name="user" id="un" value=""
 													   placeholder="What Are You Looking For?" data-theme="a">
 									           
-									            <button type="submit"
-														class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-search">SEARCH</button>
+									            
+									<button type="submit"
+											class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-search">
+										SEARCH
+									</button>
 								</div>
 							</div>
 
@@ -105,20 +104,22 @@
 						<div class="ui-grid-b">
 							<div class="ui-block-a"></div>
 							<div class="ui-block-b">  
-								<?php if(!$this->session->userdata('login_status')) :?>
+								<?php if (!$this->session->userdata('login_status')) : ?>
 
-									<a id="nav_des" href="<?php echo base_url(); ?>index.php/auth/login_user" rel="external" data-role="button" rel=external class="ui-btn-right ui-btn ui-btn-a ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-eye ui-nodisc-icon">LOGIN</a>
+									<a id="nav_des" href="<?php echo base_url(); ?>index.php/auth/login_user"
+									   rel="external" data-role="button" rel=external
+									   class="ui-btn-right ui-btn ui-btn-a ui-btn-inline ui-mini ui-corner-all ui-btn-icon-right ui-icon-eye ui-nodisc-icon">LOGIN</a>
 								<?php endif; ?>
-								<!--									<a id="nav_des_acc" href="--><?php //echo base_url(); ?><!--index.php/accountcontroller" rel="external" data-role="button" rel=external class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-notext ui-corner-all" >ACCOUNT</a>-->
-								<?php if($this->session->userdata('login_status')) :?>
-								<a href="#positionWindow" id="popupPadded" data-icon="search" data-rel="popup"
-								   data-theme="a" data-overlay-theme="a" data-position-to="window"
-								   class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">Search</a>
+								<!--									<a id="nav_des_acc" href="-->
+								<?php //echo base_url(); ?><!--index.php/accountcontroller" rel="external" data-role="button" rel=external class="ui-btn-right ui-btn ui-icon-user ui-btn-icon-notext ui-corner-all" >ACCOUNT</a>-->
+								<?php if ($this->session->userdata('login_status')) : ?>
+									<a href="#positionWindow" id="popupPadded" data-icon="search" data-rel="popup"
+									   data-theme="a" data-overlay-theme="a" data-position-to="window"
+									   class="ui-btn-right ui-btn ui-icon-search ui-btn-icon-notext ui-corner-all">Search</a>
 								<?php endif; ?>
 							</div>
 							<div class="ui-block-c"></div>
 						</div><!-- /grid-b -->
-
 
 
 						<!-- <div class="ui-bar ui-bar-a" style="height:50px" ui-btn-right>
@@ -134,9 +135,6 @@
 	<!-- header end -->
 
 
-
-
-
 	<!-- grid view -->
 
 	<!-- <div data-role="header">
@@ -148,16 +146,16 @@
 	<div role="main" class="ui-content">
 
 		<ul data-role="listview" data-inset="true">
+
+			<?php foreach ($categories as $cat){?>
 			<li data-role="collapsible" data-iconpos="right" data-inset="false"
 				style="border-color: white !important;">
-				<h2>Meat</h2>
+				<h2><?php echo $cat->getCategoryName() ?></h2>
 				<div class="ui-body ui-body-d">
-					<a href="../views/CartPage.html" rel="external">
-						<img src="../assets/images/res/offer.jpg" class="ui-li-thumb">
-						<h2>Leaderboard</h2>
-						<p>One of the worst-kept secrets in tech has been confirmed: Apple will hold an event
-							October 23 in San Jose, California, at which the company is widely expected to unveil a
-							smaller, cheaper version of its popular iPad called "Mini".</p>
+					<a href="<?php echo site_url('/maincontroller/productbycategory/'. $cat->getCatId()); ?>" data-ajax="false" rel="external">
+						<img src="<?php echo $cat->getCategoryImage() ?>" style="max-width: 100%" class="ui-li-thumb">
+						<h2>Category Description</h2>
+						<p><?php echo $cat->getCatDescription() ?></p>
 					</a>
 				</div>
 				<!-- <ul>
@@ -167,35 +165,34 @@
 					<ol><a href="../views/ProductPage.html" rel="external">hi</a></ol>
 				</ul> -->
 			</li>
+			<?php } ?>
 
-
-
-			<?php foreach ($categories as $cat){?>
-			<li><a href="#">
-					<img src="<?php echo $cat->getCategoryImage() ?>">
-					<h2><?php echo $cat->getCategoryName() ?></h2>
-					<p class="ui-li-aside">Other</p>
-
-				</a></li> <?php } ?>
-<!--			<li><a href="#">-->
-<!--					<img src="../assets/images/res/offer.jpg" class="ui-li-thumb">-->
-<!--					<h2>Meat</h2>-->
-<!--					<p class="ui-li-aside">Other</p>-->
-<!--				</a></li>-->
+<!--			--><?php //foreach ($categories as $cat) { ?>
+<!--				<li><a href="#">-->
+<!--						<img src="--><?php //echo $cat->getCategoryImage() ?><!--">-->
+<!--						<h2>--><?php //echo $cat->getCategoryName() ?><!--</h2>-->
+<!--						<p class="ui-li-aside">Other</p>-->
 <!---->
-<!---->
-<!---->
-<!---->
-<!--			<li><a href="">-->
-<!--					<img src="../assets/images/res/offer.jpg" class="ui-li-thumb">-->
-<!--					<h2>Firefox OS</h2>-->
-<!--					<p class="ui-li-aside">Other</p>-->
-<!--				</a></li>-->
-<!--			<li><a href="#">-->
-<!--					<img src="../assets/images/res/offer.jpg" class="ui-li-thumb">-->
-<!--					<h2>Tizen</h2>-->
-<!--					<p class="ui-li-aside">Other</p>-->
-<!--				</a></li>-->
+<!--					</a></li> --><?php //} ?>
+			<!--			<li><a href="#">-->
+			<!--					<img src="../assets/images/res/offer.jpg" class="ui-li-thumb">-->
+			<!--					<h2>Meat</h2>-->
+			<!--					<p class="ui-li-aside">Other</p>-->
+			<!--				</a></li>-->
+			<!---->
+			<!---->
+			<!---->
+			<!---->
+			<!--			<li><a href="">-->
+			<!--					<img src="../assets/images/res/offer.jpg" class="ui-li-thumb">-->
+			<!--					<h2>Firefox OS</h2>-->
+			<!--					<p class="ui-li-aside">Other</p>-->
+			<!--				</a></li>-->
+			<!--			<li><a href="#">-->
+			<!--					<img src="../assets/images/res/offer.jpg" class="ui-li-thumb">-->
+			<!--					<h2>Tizen</h2>-->
+			<!--					<p class="ui-li-aside">Other</p>-->
+			<!--				</a></li>-->
 
 		</ul>
 
@@ -208,12 +205,16 @@
 	<div data-role="footer" data-id="foo1" data-position="fixed">
 		<div data-role="navbar" data-iconpos="top">
 			<ul>
-				<li><a href="<?php echo base_url(); ?>index.php/maincontroller" data-icon="home" rel="external">Home</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/maincontroller" data-icon="home" rel="external">Home</a>
+				</li>
 				<li><a href="<?php echo base_url(); ?>index.php/categorycontroller" data-icon="grid" rel="external"
 					   class="ui-btn-active ui-state-persist">Category</a></li>
-				<li><a href="<?php echo base_url(); ?>index.php/cartcontroller" data-icon="alert" rel="external">Cart</a></li>
-				<li><a href="<?php echo base_url(); ?>index.php/promotioncontroller" data-icon="star" rel="external">Promotions</a></li>
-				<li><a href="<?php echo base_url(); ?>index.php/accountcontroller" data-icon="user" rel="external">Account</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/cartcontroller" data-icon="alert"
+					   rel="external">Cart</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/promotioncontroller" data-icon="star" rel="external">Promotions</a>
+				</li>
+				<li><a href="<?php echo base_url(); ?>index.php/accountcontroller" data-icon="user" rel="external">Account</a>
+				</li>
 			</ul>
 		</div><!-- /navbar -->
 	</div><!-- /footer -->

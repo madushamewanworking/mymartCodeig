@@ -100,7 +100,7 @@ class Auth extends CI_Controller
 					$this->session->set_userdata($login_user_data);
 					$this->session->set_flashdata('user_successfully_loggedin', 'User successfully logged in');
 
-					redirect('maincontroller/view/homepage');
+					redirect('maincontroller');
 				} else {
 					//session handling
 					$this->session->set_flashdata('user_login_fail', 'User login failed Wrong Credentials');

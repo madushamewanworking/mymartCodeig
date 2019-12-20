@@ -1,5 +1,3 @@
-<?php ?>
-
 <html lang="en">
 
 <head>
@@ -29,24 +27,29 @@
 			crossorigin="anonymous"></script>
 
 	<script src="https://kit.fontawesome.com/29a34cb7a6.js" crossorigin="anonymous"></script>
-	<script src = "https://checkout.stripe.com/checkout.js" ></script>
+	<script src="https://checkout.stripe.com/checkout.js"></script>
 
 
 	<!-- main library -->
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/jquery/jquery.mobile-1.4.5.min.css" />
-	<link rel="stylesheet" href="<?php echo base_url(); ?>/assets/jquery/font-awesome.min.css" rel="stylesheet"
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/jquery/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/jquery/font-awesome.min.css" rel="stylesheet"
 		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-	<script src="<?php echo base_url();?>/assets/jquery/jquery-1.11.1.min.js"></script>
-	<script src="<?php echo base_url();?>/assets/jquery/jquery.mobile-1.4.5.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" >
+	<script src="<?php echo base_url(); ?>assets/jquery/jquery-1.11.1.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/jquery/jquery.mobile-1.4.5.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/cart_page.css">
-
-
-
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" />
 	<!-- <link rel="stylesheet" type="text/css" href="../assets/css/grid.css" /> -->
 
+	<!-- Qr code scan -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/breadcrumb.css">
 
-
+	<!-- Payment popup -->
+	<!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://checkout.stripe.com/checkout.js"></script> -->
 
 	<!-- theam config -->
 	<!-- <link rel="stylesheet" href="../assets/themes/theam1/theam_d.css" />
@@ -55,10 +58,13 @@
 	<link rel="stylesheet" href="../assets/themes/theam2/themes/jquery.mobile.icons.min.css" /> -->
 
 	<title>Document</title>
+	<script type="text/javascript">
+
+	</script>
 </head>
 
 <body>
-<div data-role="page"  id="demo-page" class="my-page" data-url="demo-page"  data-add-back-btn="true">
+<div data-role="page" id="demo-page" class="my-page" data-url="demo-page" >
 	<!-- header start -->
 	<div data-role="header">
 		<div class="ui-grid-a">
@@ -67,7 +73,8 @@
 				<!-- <a class="ui-link" href="" > <img id="Logo" src="../assets/images/res/Logo.png"> </a> -->
 				<!-- <a href="info.html" data-icon="info-page" class="ui-btn-right" data-transition="flip" data-iconpos="notext" data-theme="a"></a> -->
 				<!-- <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-myicon"> -->
-				<img src="../assets/images/res/Logo.png" alt="Logo, Facebook"  class="logo" style="float:left; display:inline; width: 36%;" />
+				<img src="../assets/images/res/Logo.png" alt="Logo, Facebook" class="logo"
+					 style="float:left; display:inline; width: 36%;" />
 			</div>
 			<div class="ui-block-b">
 				<div class="ui-grid-a ">
@@ -117,20 +124,22 @@
 
 			</div>
 		</div>
-		<div class="ui-grid-a top-tag" data-position="fixed" >
-			<div>
-				<img src="" alt="">
-			</div>
-			<p>PAYMENT DETAILS</p>
-			<!-- <div class="ui-block-a"><div class="ui-bar ui-bar-a bottom-tag text-center" style="height:60px"><p><span>Total</span> Rs.1500.00</p></div></div>
-			<div class="ui-block-b"><div class="ui-bar ui-bar-a bottom-tag text-center" style="height:60px"><button class="ui-btn ui-btn-inline pay btn btn-default btn-lg">Pay Now</button></div></div> -->
-		</div>
 	</div>
 	<!-- header end -->
+<!--	<div data-role="header">-->
+<!--		<a data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" rel="external">Back</a>-->
+<!--		<label for="title" class="title" >PRODUCT DETAIL</label>-->
+<!--		<a href="#" data-icon="check">Save</a> -->
+<!--	</div>-->
 
 	<!-- slide show start -->
 
 
+	<div class="breadcrumb flat">
+		<a href="#">Cart</a>
+		<a href="#" class="active">Payment Details</a>
+		<a href="#">Confirmation</a>
+	</div>
 	<!-- slide show end -->
 
 
@@ -138,9 +147,9 @@
 	<!-- grid view -->
 
 	<!-- <div data-role="header">
-		<h1>Listview Responsive Grid</h1>
-		<a href="./" data-shadow="false" data-iconshadow="false" data-icon="carat-l" data-iconpos="notext" data-rel="back" data-ajax="false">Back</a>
-	</div> -->
+			<h1>Listview Responsive Grid</h1>
+			<a href="./" data-shadow="false" data-iconshadow="false" data-icon="carat-l" data-iconpos="notext" data-rel="back" data-ajax="false">Back</a>
+		</div> -->
 
 	<!-- /header -->
 	<div data-role="header">
@@ -152,23 +161,25 @@
 
 	<div role="main" class="ui-content">
 		<ul data-role="listview" class="payment-tab" id="class-list">
-			<li class="cart-item payment-dets" >
-				<h2>Axe deodrant for men</h2>
-				<p>Item Count: <span class="item-count">5</span></p>
-				<p>Amount: Rs.<span class="item-amount">2332</span></p>
+			<?php foreach ($proList as $cat){?>
+			<li class="cart-item payment-dets">
+				<h2><?php echo $cat->getProductName() ?></h2>
+				<p>Item Count: <span class="item-count"><?php echo $cat->getProductCount() ?></span></p>
+				<p>Amount: Rs.<span class="item-amount"><?php echo $cat->getProductCount()*$cat->getProductPrice()?></span></p>
 
 
-				<img src="../assets/images/res/offer.jpg" class="ui-li-thumb m-1 fav-thumb">
-
-			</li>
-			<li class="cart-item payment-dets" >
-				<h2>Axe deodrant for men</h2>
-				<p>Item Count: <span class="item-count">5</span></p>
-				<p>Amount: Rs.<span class="item-amount">2332</span></p>
-
-				<img src="../assets/images/res/offer.jpg" class="ui-li-thumb m-1 fav-thumb">
+				<img src="<?php echo $cat->getProductImage() ?>" class="ui-li-thumb m-1 fav-thumb">
 
 			</li>
+			<?php } ?>
+<!--			<li class="cart-item payment-dets">-->
+<!--				<h2>Axe deodrant for men</h2>-->
+<!--				<p>Item Count: <span class="item-count">5</span></p>-->
+<!--				<p>Amount: Rs.<span class="item-amount">2332</span></p>-->
+<!---->
+<!--				<img src="../assets/images/res/offer.jpg" class="ui-li-thumb m-1 fav-thumb">-->
+<!---->
+<!--			</li>-->
 
 
 		</ul>
@@ -180,7 +191,7 @@
 
 	<div role="main" class="ui-content">
 		<ul data-role="listview" class="payment-tab" id="class-list">
-			<li class="cart-item payment-dets" >
+			<li class="cart-item payment-dets">
 				<h2>Axe deodrant for men</h2>
 				<p>Item Count: <span class="item-count">5</span></p>
 				<p>Amount: Rs.<span class="item-amount">2332</span></p>
@@ -190,11 +201,81 @@
 
 		</ul>
 	</div>
+	<div></div>
 
 	<div data-role="header" class="total">
-		<h1 style="color:#fe6311;">Total Amount:<span style="color:#000;">2300</span></h1>
+		<h1 style="color:#fe6311;">Total Amount:<span style="color:#000;"><?php echo $amount ?></span></h1>
 	</div>
 
+	<fieldset class="ui-grid-a" style="margin-bottom: 10px; height: 20%">
+		<div class="ui-block-a"><label for="scan" style="margin: 17.5px; text-align: center;">Discount</label></div>
+		<div class="ui-block-b"> <a href="#popupqrcode" data-rel="popup" data-position-to="window" id="scan"
+									class="ui-btn ui-shadow ui-corner-all" data-transition="pop"
+									style="background-color: #ffc107 !important; color:white !important; width: 50%; text-align: center;">Scan
+				QR</a>
+
+			<!-- <a data-role="button" id="scan"
+				style="background-color: #ffc107 !important; color:white !important; width: 50%; text-align: center;">Scan QR</a> -->
+
+			<div data-role="popup" id="popupqrcode" data-theme="a" class="ui-corner-all">
+				<!--     <form> -->
+				<!--         <div style="padding:10px 20px;"> -->
+				            <h3 style="text-align: center;">Scan Discount</h3>
+				<video id="preview"></video>
+				<script type="text/javascript">
+
+					let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+                    scanner.addListener('scan', function (content) {
+                        alert(content);
+                    });
+                    Instascan.Camera.getCameras().then(function (cameras) {
+                        if (cameras.length > 0) {
+                            scanner.start(cameras[0]);
+                        } else {
+                            console.error('No cameras found.');
+                        }
+                    }).catch(function (e) {
+                        console.error(e);
+                    });
+                    $( document ).ready(function() {
+                        var $form = $('#frmBooking');
+                        var handler = StripeCheckout.configure({
+                            key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+                            token: function (token) {
+                                if (token.id) {
+                                    $("#thankyouPayment").html("Thank you")
+                                }
+                            }
+                        })
+                        // alert("hello");
+
+                        $('#customButton').on('click', function (e) {
+                            handler.open({
+                                name: 'Demo Site',
+                                currency: 'LKR',
+                                description: $('#item_name').val(),
+                                amount: $('#item_value').val() * 100
+                            });
+                            // alert("hello");
+                            $(window).on('popstate', function () {
+                                handler.close();
+                            });
+                        });
+                    });
+				</script>
+
+				<!--         </div> -->
+				<!--     </form> -->
+			</div>
+		</div>
+	</fieldset>
+
+<!--	<div>-->
+<!--		<label for="scan" style=" text-align: center;-->
+<!--                background-color: #f3f3f3; margin: 17.5px;-->
+<!--                color: #d51f31;">Successfully Discount Added!</label>-->
+<!---->
+<!--	</div>-->
 
 
 	<!-- gerid view end -->
@@ -205,64 +286,73 @@
 	<!-- footer -->
 	<div data-role="footer" data-id="foo1" data-position="fixed">
 
-		<div class="my-btn" data-postion="fixed">
-			<a data-role="button" class="cart-btn my-btn" id="customButton" style="background-color: #fe6311 !important; color:white !important;">
+		<!-- <div class="my-btn" data-postion="fixed"> -->
+		<form id="frmBooking" name="bookingForm" action="post" action="_self">
+			<a data-role="button" class="cart-btn my-btn" id="customButton"
+			   style="background-color: #fe6311 !important; height: 40px  !important;  margin-bottom: 0px !important;  margin-top: 0px !important; color:white !important;">
 				PROCEED TO CHECKOUT
 			</a>
-		</div>
+		</form>
 
+
+		<div align="center" id="thankyouPayment">
+
+		</div>
+		<!-- </div> -->
 
 		<div data-role="navbar" data-iconpos="top">
 			<ul>
-				<li><a href="HomePage.html" data-icon="home" rel="external">Home</a></li>
-				<li><a href="cart.html" data-icon="grid" rel="external">Category</a></li>
-				<li><a href="#" data-icon="alert" rel="external">Cart</a></li>
-				<li><a href="#" data-icon="star" rel="external">Favourites</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/maincontroller" data-icon="home" rel="external">Home</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/categorycontroller" data-icon="grid" rel="external">Category</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/cartcontroller" data-icon="alert" rel="external"  class="ui-btn-active ui-state-persist" >Cart</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/promotioncontroller" data-icon="star" rel="external">Promotions</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/accountcontroller" data-icon="user" rel="external">Account</a></li>
 				<!-- <li><a href="#" data-icon="user" rel="external">Account</a></li> -->
 			</ul>
 		</div><!-- /navbar -->
 	</div><!-- /footer -->
 
 	<!-- <div data-role="footer" data-id="foo1" data-position="fixed">
-			<div  data-role="navbar" data-iconpos="top">
-				<ul>
-					<li><a href="#" data-icon="home" class="ui-nodisc-icon " >Home</a></li>
-					<li><a href="#" data-icon="grid" class="ui-nodisc-icon">Category</a></li>
-					<li><a href="#" data-icon="cart" class="ui-nodisc-icon">Cart</a></li>
-					<li><a href="#" data-icon="star" class="ui-nodisc-icon" >Promotions</a></li>
-					<li><a href="#" data-icon="user" class="ui-nodisc-icon" >Account</a></li>
-				</ul>
-			</div>
-		</div> -->
+		<div  data-role="navbar" data-iconpos="top">
+			<ul>
+				<li><a href="#" data-icon="home" class="ui-nodisc-icon " >Home</a></li>
+				<li><a href="#" data-icon="grid" class="ui-nodisc-icon">Category</a></li>
+				<li><a href="#" data-icon="cart" class="ui-nodisc-icon">Cart</a></li>
+				<li><a href="#" data-icon="star" class="ui-nodisc-icon" >Promotions</a></li>
+				<li><a href="#" data-icon="user" class="ui-nodisc-icon" >Account</a></li>
+			</ul>
+		</div>
+	</div> -->
 </body>
 
-<script type="text/javascript">
-    jQuery(function($){
+<!-- <script type="text/javascript">
+    jQuery(function ($) {
         var $form = $('#frmBooking');
         var handler = StripeCheckout.configure({
-            key:'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
-            token : function(token){
-                if(token.id){
+            key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+            token: function (token) {
+                if (token.id) {
                     $("#thankyouPayment").html("Thank you")
                 }
             }
         })
 
-        $('#customButton').on('click', function(e) {
+        $('#customButton').on('click', function (e) {
             handler.open({
-                name : 'Demo Site',
+                name: 'Demo Site',
                 currency: 'LKR',
                 description: $('#item_name').val(),
                 amount: $('#item_value').val() * 100
             });
 
-            $(window).on('popstate', function(){
+            $(window).on('popstate', function () {
                 handler.close();
             });
         });
     });
-</script>
+</script> -->
 <div></div>
 <div></div>
 </div>
+
 </html>

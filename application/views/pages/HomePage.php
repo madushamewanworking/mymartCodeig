@@ -203,7 +203,7 @@
 
                         <img src="<?php echo $cat->getCategoryImage() ?>" style="width: 100%; max-height:88px;" class="ui-li-thumb">
 <!--						</a>-->
-                        <h2>iOS 6.1</h2>getCategoryName
+                        <h2>iOS 6.1</h2>
                         <p>Apple released iOS 6.1</p>
                         <p class="ui-li-aside"><?php echo $cat->getCategoryName() ?></p>
                     </a>

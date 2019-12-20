@@ -39,8 +39,8 @@
 	<script src="<?php echo base_url();?>/assets/script/common.js"></script>
 	<!-- <link rel="stylesheet" type="text/css" href="../assets/css/grid.css" /> -->
 
-
-
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+	<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 
 	<!-- theam config -->
 	<!-- <link rel="stylesheet" href="../assets/themes/theam1/theam_d.css" />
@@ -263,7 +263,10 @@
 
 	<!-- /header -->
 	<div role="main" class="ui-content">
+		<form id="dataform" method="post">
 		<ul data-role="listview" id="class-list">
+
+
 			<?php foreach ($cartDetails as $cart){ ?>
 			<li class="cart-item" >
 				<h2><?php echo $cart->getProductName() ?></h2>
@@ -275,10 +278,11 @@
 
 				<img src="<?php echo $cart->getProductImage() ?>" class="ui-li-thumb m-1">
 				<div class="ui-li-aside">
-					<input type="checkbox" data-mini="true">
+					<input type="checkbox" name="cartpro[]" value="<?php echo $cart->getProductId() ?>" data-mini="true">
 				</div>
 
 			</li> <?php } ?>
+
 <!--			<li class="cart-item" >-->
 <!--				<h2>Axe deodrant for men</h2>-->
 <!--				<div class="row">-->
@@ -307,6 +311,7 @@
 <!--			</li>-->
 
 		</ul>
+		</form>
 	</div><!-- /content -->
 
 	<!-- gerid view end -->
@@ -317,12 +322,17 @@
 	<!-- footer -->
 	<div data-role="footer" data-id="foo1" data-position="fixed">
 		<div class="ui-grid-a bottom-tag" data-position="fixed" style="color:#bbb !important;" >
-			<div class="ui-block-a" data-position="fixed"><div class="ui-bar ui-bar-a bottom-tag text-center" style="height:60px"><p><span>Total</span> Rs.1500.00</p></div></div>
+<!--			<div class="ui-block-a" data-position="fixed"><div class="ui-bar ui-bar-a bottom-tag text-center" style="height:60px"><p><span>Total</span> Rs.1500.00</p></div></div>-->
 
-			<div class="ui-block-b" data-position="fixed"><div class="ui-bar ui-bar-a bottom-tag text-center" style="height:60px"><a data-role="button" class="ui-btn ui-btn-inline pay btn btn-default btn-lg" style="background-color: #fe6311 !important; color:white !important;">Pay Now</a></div></div>
+<!--			<div data-position="fixed"><div class="ui-bar ui-bar-a bottom-tag text-center" style="height:60px"><button type="submit" form="dataform" class="ui-btn ui-btn-inline pay btn btn-default btn-lg" style="height: 50px;margin-bottom: 20px; width: 200px"  formaction="--><?php //echo base_url('index.php/cartcontroller/checkproduct'); ?><!-- " data-ajax="false" >Check Out</button></div></div>-->
+			<button  class="cart-btn my-btn" id="customButton" type="submit" form="dataform" formaction="<?php echo base_url('index.php/cartcontroller/checkproduct'); ?> " data-ajax="false"
+			   style="background-color: #fe6311 !important; height: 40px  !important;  margin-bottom: 0px !important;  margin-top: 0px !important; color:white !important;">
+				PICK & PAY
+			</button>
 		</div>
+<!--		<a data-role="button" class="ui-btn ui-btn-inline pay btn btn-default btn-lg" style="background-color: #fe6311 !important; color:white !important; margin-bottom: 25px; width: 200px; height: 40px" >Pay Now</a>-->
 
-		<div data-role="navbar" data-iconpos="top">
+<div data-role="navbar" data-iconpos="top">
 			<ul>
 				<li><a href="<?php echo base_url(); ?>index.php/maincontroller" data-icon="home" rel="external">Home</a></li>
 				<li><a href="<?php echo base_url(); ?>index.php/categorycontroller" data-icon="grid" rel="external">Category</a></li>
