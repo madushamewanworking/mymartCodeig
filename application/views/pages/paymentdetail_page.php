@@ -41,7 +41,7 @@
 	<!-- <link rel="stylesheet" type="text/css" href="../assets/css/grid.css" /> -->
 
 	<!-- Qr code scan -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 	<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/breadcrumb.css">
 
@@ -223,12 +223,15 @@
 	<div></div>
 
 	<div data-role="header" class="total">
-		<h1 style="color:#fe6311;">Total Amount:<span style="color:#000;"><?php echo $amount ?></span></h1>
+		<h1 style="color:#fe6311;">Total RS:<span style="color:#000;" id="amount"><?php echo $amount ?></span></h1>
+		<h1 class="h1discount" style="color:#fe6311; visibility: hidden">Discount RS:<span id="discount" style="color:#000;" id="amount" ></span></h1>
+		<h1 class="h1pay" style="color:#fe6311;  visibility: hidden">Pay <span id="pay" style="color:#000;"></span></h1>
 	</div>
 
-	<fieldset class="ui-grid-a" style="margin-bottom: 10px; height: 20%">
+	<fieldset class="ui-grid-a" style="margin-bottom: 10px; height: 20%" id="scanbutton">
 		<div class="ui-block-a"><label for="scan" style="margin: 17.5px; text-align: center;">Discount</label></div>
-		<div class="ui-block-b"> <a href="#popupqrcode" data-rel="popup" data-position-to="window" id="scan"
+		<div class="ui-block-b">
+			<a href="#popupqrcode"  data-rel="popup" data-position-to="window" id="scan"
 									class="ui-btn ui-shadow ui-corner-all" data-transition="pop"
 									style="background-color: #ffc107 !important; color:white !important; width: 50%; text-align: center;">Scan
 				QR</a>
@@ -236,31 +239,58 @@
 			<!-- <a data-role="button" id="scan"
 				style="background-color: #ffc107 !important; color:white !important; width: 50%; text-align: center;">Scan QR</a> -->
 
-			<div data-role="popup" id="popupqrcode" data-theme="a" class="ui-corner-all">
+			<div data-role="popup" id="popupqrcode"  data-theme="a" class="ui-corner-all">
 				<!--     <form> -->
 				<!--         <div style="padding:10px 20px;"> -->
-				            <h3 style="text-align: center;">Scan Discount</h3>
+				 <h3 id="pophead" style="text-align: center;">Scan Discount</h3>
 				<video id="preview"></video>
-				<script type="text/javascript">
 
-					let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+
+				<!--         </div> -->
+				<!--     </form> -->
+			</div>
+			<script type="text/javascript">
+                $( document ).ready(function() {
+
+                    // alert("dsffd");
+                    let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
                     scanner.addListener('scan', function (content) {
                         alert(content);
+                        var span_Text = document.getElementById("amount").innerText;
+                        alert(span_Text);
+
+                        var discount=(content*span_Text)/1000;
+                        alert(discount);
+                        var afterDiscount=span_Text-discount;
+
+                        $('.h1discount').css('visibility','visible');
+                        $('.h1pay').css('visibility','visible');
+
+                        $("#amount").text(span_Text);
+                        $("#discount").text(discount.toFixed(2));
+                        $("#pay").text(afterDiscount.toFixed(2));
+
+                        document.getElementById("scanbutton").remove();
+
+
+                        document.getElementById("pophead").remove();
+                        document.getElementById("preview").remove();
+                        $( "#popupqrcode" ).popup( "close" );
+
+
                     });
                     Instascan.Camera.getCameras().then(function (cameras) {
                         if (cameras.length > 0) {
                             scanner.start(cameras[0]);
+
                         } else {
                             console.error('No cameras found.');
                         }
                     }).catch(function (e) {
                         console.error(e);
                     });
-				</script>
-
-				<!--         </div> -->
-				<!--     </form> -->
-			</div>
+                });
+			</script>
 		</div>
 	</fieldset>
 
@@ -274,7 +304,9 @@
 
 	<!-- gerid view end -->
 
-
+	<div data-role="popup" id="positionWindow" class="success">
+		<p style="font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;">Thank You Payment Sccess!</p>
+	</div>
 
 
 	<!-- footer -->
@@ -294,17 +326,22 @@
                     key:'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
                     token : function(token){
                         if(token.id){
-                            $("#thankyouPayment").html("Thank you")
+
+                            document.getElementById("frmBooking").remove();
+                            $( ".success" ).popup( );
+                            $( ".success" ).popup("open");
+                            // $("#thankyouPayment").html("Thank you")
                         }
                     }
                 })
 
                 $('#customButton').on('click', function(e) {
+                    var price = document.getElementById("pay").innerText;
+                    var amount=price*100;
                     handler.open({
-                        name : 'Demo Site',
+                        name : 'My Market Payment',
                         currency: 'LKR',
-                        description: $('#item_name').val(),
-                        amount: $('#item_value').val() * 100
+                        amount: amount
                     });
 
                     $(window).on('popstate', function(){
