@@ -74,5 +74,12 @@ class MainController extends CI_Controller
 		redirect('maincontroller/productDetail/'.$this->input->post('proid'));
 	}
 
+	public function addpoints()
+	{
+		$this->load->model('Products_manager');
+		$this->Products_manager->addpoints();
+		redirect('accountcontroller');
+	}
+
 
 }

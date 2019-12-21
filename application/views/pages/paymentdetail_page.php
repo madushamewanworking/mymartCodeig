@@ -255,12 +255,12 @@
                     // alert("dsffd");
                     let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
                     scanner.addListener('scan', function (content) {
-                        alert(content);
+                        // alert(content);
                         var span_Text = document.getElementById("amount").innerText;
-                        alert(span_Text);
+                        // alert(span_Text);
 
                         var discount=(content*span_Text)/1000;
-                        alert(discount);
+                        // alert(discount);
                         var afterDiscount=span_Text-discount;
 
                         $('.h1discount').css('visibility','visible');
@@ -276,6 +276,7 @@
                         document.getElementById("pophead").remove();
                         document.getElementById("preview").remove();
                         $( "#popupqrcode" ).popup( "close" );
+
 
 
                     });

@@ -201,8 +201,15 @@ $username= $this->session->userdata('username');
 
                     let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
                     scanner.addListener('scan', function (content) {
-                        alert(content);
-                        document.getElementById('gadget_url').value = '';
+                        // alert(content);
+
+
+                        var points=((content*1000)/1000)*50;
+
+                        // alert(points);
+                        document.getElementById("points").value = points;
+                        document.getElementById("pointform").submit();
+
                     });
                     Instascan.Camera.getCameras().then(function (cameras) {
                         if (cameras.length > 0) {
@@ -222,6 +229,20 @@ $username= $this->session->userdata('username');
 		</div>
 	</div><!-- /rwd-example -->
 
+
+	<form method="post" id="pointform"
+		  action="<?php echo base_url('index.php/maincontroller/addpoints'); ?>" data-ajax="false">
+
+
+		<input type="hidden" id="points" name="points" value="" >
+
+
+	</form>
+
+
+		<!-- <form action="/action_page.php" id="usrform"> -->
+
+<!--		<input type="submit" value="Submit Feedback">-->
 
 
 

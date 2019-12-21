@@ -42,7 +42,7 @@ class CartController extends CI_Controller
 //			redirect('authentication/login_user');
 //		}
 
-
+		print_r($this->email->print_debugger());
 
 		$this->load->model('Cart_manager');
 		$product=$this->Cart_manager->addfav();

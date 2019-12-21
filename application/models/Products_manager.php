@@ -169,4 +169,28 @@ class Products_manager extends  CI_Model
 	}
 
 
+
+	public function addpoints()
+	{
+		$data = array(
+			'username' =>$this->session->userdata('username'),
+			'point' => $this->input->post('points'),
+			'purchase_count' => 0,
+			'level' => 1,
+			'proimagelink' => "http://www.evanto.online/wp-content/uploads/2018/03/dummy-profile-pic-1-370x370.jpg"
+//			'user_profile_img_url' => $this->input->post('profileimglink')
+		);
+//		setcookie("ok","dbb");
+		$userId= $this->session->userdata('usr_id');
+
+		//     echo $this->input->post('id');
+		//$slugKey=url_title($this->input->post('title'));
+
+		$this->db->where('user_id',$userId);
+		return $this->db->update('leaderboard', $data);
+
+		/*add new user to database*/
+//		return $result;
+
+	}
 }

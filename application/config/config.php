@@ -25,6 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://localhost/mymart';
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -36,6 +38,7 @@ $config['base_url'] = 'http://localhost/mymart';
 |
 */
 $config['index_page'] = '';
+
 
 /*
 |--------------------------------------------------------------------------
