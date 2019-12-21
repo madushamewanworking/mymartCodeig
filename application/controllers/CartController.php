@@ -9,7 +9,8 @@ class CartController extends CI_Controller
 
 	public function getCartDetails(){
 		$this->load->model('Products_manager');
-		$cartDetails=$this->Products_manager->getCartItems(1);
+		$userId= $this->session->userdata('usr_id');
+		$cartDetails=$this->Products_manager->getCartItems($userId);
 
 		$Details =array(
 			'cartDetails'=>$cartDetails
@@ -83,6 +84,44 @@ class CartController extends CI_Controller
 
 		setcookie("price","$price");
 		$this->load->view('pages/paymentdetail_page',$pay_data);
+
+//		redirect('payementdetailcontroller');
+	}
+
+	public function checkFavproduct(){
+		$data = $this->input->post('cartpro');
+//
+//		var_dump($data);
+//
+//		setcookie("hello","sdfdlhfsluuuuuuuu");
+
+		foreach ($data as $d){
+			setcookie($d,$d);
+		}
+
+//		setcookie("hello","sdfdlhfsluuuuuuuu");
+//		print_r("dfsgbshrfhassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssc");
+
+		$this->load->model('Cart_manager');
+		$productList=$this->Cart_manager->getFavChekedList($data);
+
+		redirect('CartController');
+
+//		$purchaseCount=count($productList);
+//		$price=0;
+//
+//		setcookie("hello","$purchaseCount");
+//
+
+
+//		$pay_data = array(
+//			'count' => $purchaseCount,
+//			'amount'=>$price,
+//			'proList' => $productList
+//		);
+//
+//		setcookie("price","$price");
+//		$this->load->view('pages/cartPage',$pay_data);
 
 //		redirect('payementdetailcontroller');
 	}

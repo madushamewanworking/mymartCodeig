@@ -4,7 +4,7 @@
 class Favourites
 {
 
-
+	private $favId;
 	private $productName;
 	private $productImage;
 	private $productPrice;
@@ -12,17 +12,17 @@ class Favourites
 	private $userId;
 	private $productId;
 
-	public function __construct($productId, $productName, $productImage, $productPrice, $productCount, $userId)
+
+	public function __construct($favId, $productName, $productImage, $productPrice, $productCount, $userId, $productId)
 	{
-		$this->productId = $productId;
+		$this->favId = $favId;
 		$this->productName = $productName;
 		$this->productImage = $productImage;
 		$this->productPrice = $productPrice;
 		$this->productCount = $productCount;
 		$this->userId = $userId;
+		$this->productId = $productId;
 	}
-
-
 
 
 	public function getProductId()
@@ -95,6 +95,20 @@ class Favourites
 	{
 		$this->userId = $userId;
 	}
+
+
+	public function getFavId()
+	{
+		return $this->favId;
+	}
+
+
+	public function setFavId($favId)
+	{
+		$this->favId = $favId;
+	}
+
+
 
 
 

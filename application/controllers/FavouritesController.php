@@ -9,7 +9,8 @@ class FavouritesController extends CI_Controller
 	}
 	public function getCartDetails(){
 		$this->load->model('Products_manager');
-		$favDetails=$this->Products_manager->getFavouriteItems(1);
+		$userId = $this->session->userdata('usr_id');
+		$favDetails=$this->Products_manager->getFavouriteItems($userId);
 
 		$Details =array(
 			'favourites'=>$favDetails

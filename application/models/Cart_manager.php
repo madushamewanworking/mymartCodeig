@@ -1,5 +1,6 @@
 <?php
 include_once ("Cart.php");
+include_once ("Favourites.php");
 
 class Cart_manager extends CI_Model
 {
@@ -71,5 +72,64 @@ class Cart_manager extends CI_Model
 
 
 		return $cartDetails;
+	}
+
+
+
+	public function getFavChekedList($data_set){
+//		$data_set=array(
+//			0=>1,
+//			1=>2
+//		);
+//		for ($x = 0; $x < count($genre); $x++) {
+//			$genre_data = array(
+//				'user_id' => $insert_id,
+//				'genres_id' => $genre[$x]
+//			);
+//			$this->db->insert('user_music_genres', $genre_data);
+//		}
+//		$data = $this->input->post('cartpro');
+		$favDetails=array();
+		for ($x = 0; $x < count($data_set); $x++) {
+			$this->db->select('fav.*');
+			$this->db->from('fav');
+			$this->db->where('fav.fav_id', $data_set[$x]);
+			$query = $this->db->get();
+			setcookie("ksg", $query->num_rows());
+
+//			$query= $this->db->get();
+
+			if($query->num_rows() !=0){
+
+				foreach ($query->result() as $cartRow){
+					$favDetails[]=new Favourites($cartRow->fav_id,$cartRow->proname, $cartRow->proimagelink, $cartRow->proprice, $cartRow->procount, $cartRow->user_id, $cartRow->product_id);
+				}
+
+			}
+		}
+
+		foreach ($favDetails as $fav){
+			$cartInsertData = array(
+				'productcount' => $fav->getProductCount(),
+				'product_id' =>$fav->getProductId(),
+				'proname' => $fav->getProductName(),
+				'proprice' => $fav->getProductPrice(),
+				'proimagelink' => $fav->getProductImage(),
+				'user_id' => $this->session->userdata('usr_id')
+
+//			'user_profile_img_url' => $this->input->post('profileimglink')
+			);
+			setcookie("ok","dbb");
+			$result = $this->db->insert('cart', $cartInsertData);
+			//get return value just added to db
+			//$insert_id = $this->db->insert_id();
+
+			/*add new user to database*/
+
+
+		}
+
+
+		return $result;
 	}
 }

@@ -1,4 +1,6 @@
-<?php ?>
+<?php
+$username= $this->session->userdata('username');
+?>
 <html lang="en">
 
 <head>
@@ -153,7 +155,7 @@
 			<div class="ui-body ui-body-d">
 				<img src="<?php echo base_url(); ?>assets/images/res/Logo.png" class="avatar" alt="Responsive image">
 				<div class="user_data">
-					<h2>NAME</h2>
+					<h2><?php echo $username ?></h2>
 					<p>Description Level,</p>
 				</div>
 

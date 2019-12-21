@@ -250,6 +250,7 @@
 
 	<!-- /header -->
 	<div role="main" class="ui-content">
+		<form id="dataform" method="post" data-ajax="false">
 		<ul data-role="listview" id="class-list ">
 
 			<?php foreach ($favourites as $favItem) {?>
@@ -262,7 +263,7 @@
 
 				<img src="<?php echo $favItem->getProductImage() ?>" class="ui-li-thumb m-1 fav-thumb">
 				<div class="ui-li-aside">
-					<input type="checkbox" data-mini="true">
+					<input type="checkbox" name="cartpro[]" value="<?php echo $favItem->getProductId() ?> data-mini="true">
 				</div>
 				<div class="ui-li-aside fav">
 					<a href="#"><i class="fas fa-trash-alt"></i></a>
@@ -273,6 +274,7 @@
 
 
 		</ul>
+		</form>
 	</div><!-- /content -->
 
 	<!-- gerid view end -->
@@ -284,9 +286,15 @@
 	<div data-role="footer" data-id="foo1" data-position="fixed">
 
 		<div class="my-btn" data-postion="fixed">
-			<a data-role="button" class="cart-btn my-btn" style="background-color: #fe6311 !important; color:white !important;">
+<!--			<a data-role="button" class="cart-btn my-btn" style="background-color: #fe6311 !important; color:white !important;">-->
+<!--				ADD TO CART-->
+<!--			</a>-->
+
+
+
+			<button  class="cart-btn my-btn" id="customButton" type="submit" form="dataform" formaction="<?php echo base_url('index.php/cartcontroller/checkFavproduct'); ?> "  style="background-color: #fe6311 !important; height: 40px  !important;  margin-bottom: 0px !important;  margin-top: 0px !important; color:white !important;">
 				ADD TO CART
-			</a>
+			</button>
 		</div>
 
 

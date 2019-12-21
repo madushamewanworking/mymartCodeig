@@ -275,7 +275,7 @@
 				<h2><?php echo $cart->getProductName() ?></h2>
 				<div class="row">
 					<p class="col-4">Count <span class="x"><?php echo $cart->getProductCount() ?></span></p>
-					<p class="col-4"><?php echo $cart->getProductPrice() ?></p>
+					<p class="col-4"><?php echo $cart->getProductCount()*$cart->getProductPrice()?></p>
 
 				</div>
 

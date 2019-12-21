@@ -59,7 +59,7 @@ class Products_manager extends  CI_Model
 		if($query->num_rows() !=0){
 
 			foreach ($query->result() as $cartRow){
-				$favouritesDetails[]=new Favourites($cartRow->product_id, $cartRow->proname, $cartRow->proimagelink, $cartRow->proprice, $cartRow->procount, $cartRow->user_id);
+				$favouritesDetails[]=new Favourites($cartRow->fav_id, $cartRow->proname, $cartRow->proimagelink, $cartRow->proprice, $cartRow->procount, $cartRow->user_id, $cartRow->product_id);
 			}
 			return $favouritesDetails;
 		}else{
