@@ -151,21 +151,21 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="d-block w-100" src="<?php echo base_url(); ?>assets/images/res/Logo.png" alt="First slide">
+                    <img class="d-block w-100" src="<?php echo base_url(); ?>assets/images/res/adOne.png" alt="First slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>hello</h5>
                         <p>aonfiweun</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="<?php echo base_url(); ?>assets/images/res/offer.jpg" alt="Second slide">
+                    <img class="d-block w-100" src="<?php echo base_url(); ?>assets/images/res/adTwo.jpg" alt="Second slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>hello</h5>
                         <p>aonfiweun</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="<?php echo base_url(); ?>assets/images/res/Logo.png" alt="Third slide">
+                    <img class="d-block w-100" src="<?php echo base_url(); ?>assets/images/res/adThree.jpg" alt="Third slide">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>hello</h5>
                         <p>aonfiweun</p>
@@ -194,6 +194,7 @@
             </div> -->
 
         <!-- /header -->
+		<h5>Categories</h5>
         <div role="main" class="ui-content">
             <ul data-role="listview" data-inset="true" class="home-cat-list">
 
@@ -248,7 +249,7 @@
             <ul data-role="listview" data-inset="true">
 				<?php foreach ($products as $pro): ?>
 				<li>
-					<a href="#">
+					<a href="<?php echo site_url('/maincontroller/productDetail/'. $pro->getProid()); ?>" data-ajax="false">
                         <img src="<?php echo $pro->getProImage() ?>"  style="width: 100%; max-height:88px;" class="ui-li-thumb">
                         <h2><?php echo $pro->getPrice() ?></h2>
                         <p><?php echo $pro->getProDescription() ?></p>

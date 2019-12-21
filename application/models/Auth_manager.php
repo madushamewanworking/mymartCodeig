@@ -40,6 +40,7 @@ class Auth_manager extends CI_Model
 
 		if (!empty($result) && password_verify($password, $result['password'])) {
 
+
 			setcookie("aa",$result['id']);
 			return $result['id'];
 

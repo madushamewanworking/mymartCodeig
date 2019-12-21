@@ -12,8 +12,11 @@ class CategoryController extends CI_Controller
 		$this->load->model('Products_manager');
 		$categories=$this->Products_manager->getCategories();
 
+
+
 		$catDetails =array(
 			'categories'=>$categories
+
 		);
 
 		$this->load->view('pages/categoryPage',$catDetails);

@@ -25,7 +25,11 @@ class MainController extends CI_Controller
 		$this->load->model('Products_manager');
 		$categories=$this->Products_manager->getCategories();
 
-
+//		$catArray= array();
+//		for( $i=0; $i<count(4); $i++ ){
+//			$catArray= $categories[$i];
+//
+//		}
 
 		$products=$this->Products_manager->getProductItems();
 
