@@ -233,7 +233,7 @@
 							   placeholder="Enter Address" value="<?php echo $userDetails[0]->getAddress()?>" ><br>
 
 <!--						<a data-role="button" id="editAcc_id" class="sub-btn">SUBMIT</a>-->
-						<button type="submit" id="reg" class="sub-btn" >SIGN UP</button>
+						<button type="submit" id="reg" class="sub-btn" >Edit Account</button>
 
 <!--					<button type="submit" class="btn btn-default btn-lg btn-primary" data-ajax="false">Sign Up</button>-->
 						<div id="error_div" class="alert alert-danger" role="alert" style="visibility: hidden;">

@@ -403,11 +403,11 @@
 
 		<div data-role="navbar" data-iconpos="top">
 			<ul>
-				<li><a href="HomePage.html" data-icon="home" rel="external">Home</a></li>
-				<li><a href="cart.html" data-icon="grid" rel="external">Category</a></li>
-				<li><a href="#" data-icon="alert" rel="external">Cart</a></li>
-				<li><a href="#" data-icon="star" rel="external">Promotions</a></li>
-				<li><a href="#" data-icon="user" rel="external">Account</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/maincontroller" data-icon="home" rel="external">Home</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/categorycontroller" data-icon="grid" rel="external">Category</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/cartcontroller" data-icon="alert" rel="external">Cart</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/promotioncontroller" data-icon="star" rel="external">Promotions</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/accountcontroller" data-icon="user" rel="external">Account</a></li>
 			</ul>
 		</div><!-- /navbar -->
 	</div><!-- /footer -->
