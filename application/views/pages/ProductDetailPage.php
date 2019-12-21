@@ -43,7 +43,7 @@
 	<script src="<?php echo base_url(); ?>assets/jquery/jquery-1.11.1.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/jquery/jquery.mobile-1.4.5.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/grid.css"/>
+<!--	<link rel="stylesheet" type="text/css" href="--><?php //echo base_url(); ?><!--assets/css/grid.css"/>-->
 
 	<!-- custom javascript -->
 	<script src="<?php echo base_url(); ?>assets/script/main.js"></script>
@@ -55,18 +55,26 @@
 	<link rel="stylesheet" href="../assets/themes/theam2/themes/jquery.mobile.icons.min.css" /> -->
 
 
-<!--	<script type="text/javascript" src="PATH/TO/YOUR/COPY/OF/jquery.mousewheel.min.js"></script>-->
+	<!--	<script type="text/javascript" src="PATH/TO/YOUR/COPY/OF/jquery.mousewheel.min.js"></script>-->
+
 
 	<script type="text/javascript" src="http://dev.jtsage.com/cdn/spinbox/latest/jqm-spinbox.min.js"></script>
 
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
 	<script src="<?php echo base_url(); ?>assets/script/common.js"></script>
 
-	<script src="<?php echo base_url(); ?>assets/script/starrr.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/starrr.css"/>
+	<script src="<?php echo base_url(); ?>assets/script/star.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/star.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/cart_page.css">
 
-
+	<!-- rating system start -->
+	<!--	<script src="--><?php //echo base_url(); ?><!--assets/starrr-gh-pages/dist/starrr.js"></script>-->
+	<!--	<link rel="stylesheet" href="--><?php //echo base_url(); ?><!--assets/starrr-gh-pages/dist/starrr.css">-->
+	<!-- end rating -->
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Didact+Gothic');
+
 
 		/* #bd *{ font-family:'Century Gothic','Futura','Didact Gothic',san-serif; } */
 		.title {
@@ -363,49 +371,95 @@
 					</div>
 
 					<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-					<div class="container">
-						<div class='starrr' id='star1'></div>
-						<div id="snap1">&nbsp;
-							<span class='your-choice-was' style='display: none;'>
-                                Your rating was <span class='choice'></span>.
-                            </span>
-						</div>
 
-						<textarea name="comment" placeholder="Enter your comments..."></textarea>
-						<!-- <form action="/action_page.php" id="usrform"> -->
-						<div class="ui-bar ui-bar-a bottom-tag text-center" style="height:60px"><a href="##"
-																								   rel="external"
-																								   data-role="button"
-																								   class="ui-btn ui-btn-inline pay btn btn-default btn-lg"
-																								   style="background-color: #fe6311 !important; color:white !important;">Submit</a>
-						</div>
-						<!-- </form> -->
-						<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+					<!--					//////////////////////-->
+					<div class="container" style="margin-top: 20px">
+						<section class='rating-widget'>
+
+							<!-- Rating Stars Box -->
+							<div class='rating-stars text-center'>
+								<ul id='stars'>
+									<li class='star' title='Poor' data-value='1'>
+										<i class='fa fa-star fa-fw'></i>
+									</li>
+									<li class='star' title='Fair' data-value='2'>
+										<i class='fa fa-star fa-fw'></i>
+									</li>
+									<li class='star' title='Good' data-value='3'>
+										<i class='fa fa-star fa-fw'></i>
+									</li>
+									<li class='star' title='Excellent' data-value='4'>
+										<i class='fa fa-star fa-fw'></i>
+									</li>
+									<li class='star' title='WOW!!!' data-value='5'>
+										<i class='fa fa-star fa-fw'></i>
+									</li>
+								</ul>
+							</div>
+
+<!--							<div class='success-box'>-->
+<!--								<div class='clearfix'></div>-->
+<!--								<img alt='tick image' width='32'-->
+<!--									 src='data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiM2QUMyNTk7IiBkPSJNMjEzLjMzMywwQzk1LjUxOCwwLDAsOTUuNTE0LDAsMjEzLjMzM3M5NS41MTgsMjEzLjMzMywyMTMuMzMzLDIxMy4zMzMgIGMxMTcuODI4LDAsMjEzLjMzMy05NS41MTQsMjEzLjMzMy0yMTMuMzMzUzMzMS4xNTcsMCwyMTMuMzMzLDB6IE0xNzQuMTk5LDMyMi45MThsLTkzLjkzNS05My45MzFsMzEuMzA5LTMxLjMwOWw2Mi42MjYsNjIuNjIyICBsMTQwLjg5NC0xNDAuODk4bDMxLjMwOSwzMS4zMDlMMTc0LjE5OSwzMjIuOTE4eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K'/>-->
+<!--								<div class='text-message'></div>-->
+<!--								<div class='clearfix'></div>-->
+<!--							</div>-->
+							<form method="post"
+								  action="<?php echo base_url('index.php/maincontroller/addcomment'); ?>" data-ajax="false">
+
+
+								<input type="text" id="rating" name="rating" value="" >
+
+								<input type="hidden" id="rating" name="proid" value="<?php echo $cat->getProid() ?>" >
+
+
+								<textarea name="comment" placeholder="Enter your comments..."></textarea>
+								<!-- <form action="/action_page.php" id="usrform"> -->
+
+								<input type="submit" value="Submit Feedback">
+
+							</form>
+							<!-- </form> -->
+							<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+						</section>
 					</div>
 				</div>
 
 			<?php endforeach; ?>
+
+			<div role="main" class="ui-content">
+				<form id="dataform" method="post" data-ajax="false">
+					<ul data-role="listview" id="class-list">
+
+
+						<?php foreach ($comments as $cart){ ?>
+							<li class="cart-item" >
+								<h2><?php echo $cart->getUsername() ?></h2>
+								<div class="row">
+									<p class="col-4">Count <span class="x"><?php echo $cart->getComment() ?></span></p>
+<!--									<p class="col-4">--><?php //echo $cart->getProductPrice() ?><!--</p>-->
+
+								</div>
+
+								<img src="http://www.evanto.online/wp-content/uploads/2018/03/dummy-profile-pic-1-370x370.jpg" style="border-radius: 50%;" class="ui-li-thumb m-1">
+<!--								<div class="ui-li-aside">-->
+<!--									<input type="checkbox" name="cartpro[]" value="--><?php //echo $cart->getProductId() ?><!--" data-mini="true">-->
+<!--								</div>-->
+
+							</li> <?php } ?>
+
+
+					</ul>
+				</form>
+			</div><!-- /content -->
 		</div>
+
 
 	</div> <!-- /content -->
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-<!--	<script src="../Resources/starrr-gh-pages/dist/starrr.js"></script>-->
-	<script>
-        $('#star1').starrr({
-            change: function (e, value) {
-                if (value) {
-                    $('.your-choice-was').show();
-                    $('.choice').text(value);
-                    $('#comntbx').show();
-                } else {
-                    $('.your-choice-was').hide();
-                    $('#comntbx').hide();
 
-                }
-            }
-        });
-	</script>
+
 	<!-- footer -->
 	<div data-role="footer" data-id="foo1" data-position="fixed">
 		<div data-role="navbar" data-iconpos="top">

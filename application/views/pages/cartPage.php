@@ -286,32 +286,6 @@
 
 			</li> <?php } ?>
 
-<!--			<li class="cart-item" >-->
-<!--				<h2>Axe deodrant for men</h2>-->
-<!--				<div class="row">-->
-<!--					<p class="col-4">Count 2</p>-->
-<!--					<p class="col-4">Rs.750</p>-->
-<!--				</div>-->
-<!---->
-<!--				<img src="../assets/images/res/offer.jpg" class="ui-li-thumb m-1">-->
-<!--				<div class="ui-li-aside">-->
-<!--					<input type="checkbox" data-mini="true">-->
-<!--				</div>-->
-<!---->
-<!--			</li>-->
-<!--			<li class="cart-item" >-->
-<!--				<h2>Axe deodrant for men</h2>-->
-<!--				<div class="row">-->
-<!--					<p class="col-4">Count 2</p>-->
-<!--					<p class="col-4">Rs.750</p>-->
-<!--				</div>-->
-<!---->
-<!--				<img src="../assets/images/res/offer.jpg" class="ui-li-thumb m-1">-->
-<!--				<div class="ui-li-aside">-->
-<!--					<input type="checkbox" data-mini="true">-->
-<!--				</div>-->
-<!---->
-<!--			</li>-->
 
 		</ul>
 		</form>

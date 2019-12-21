@@ -55,11 +55,20 @@ class MainController extends CI_Controller
 	{
 		$this->load->model('Products_manager');
 		$product=$this->Products_manager->productDetail($id);
-
+		$commen=$this->Products_manager->comments($id);
 		$data =array(
-			'product' =>$product
+			'product' =>$product,
+			'comments'=>$commen
 		);
 
 		$this->load->view('pages/productdetailpage',$data);
 	}
+	public function addcomment()
+	{
+		$this->load->model('Products_manager');
+		$this->Products_manager->addcomment();
+		redirect('maincontroller/productDetail/'.$this->input->post('proid'));
+	}
+
+
 }

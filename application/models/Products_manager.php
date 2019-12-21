@@ -4,6 +4,7 @@ include_once('Category.php');
 include_once ('Cart.php');
 include_once ('Favourites.php');
 include_once ('Product.php');
+include_once ('rating.php');
 
 class Products_manager extends  CI_Model
 {
@@ -127,5 +128,45 @@ class Products_manager extends  CI_Model
 			return $ProductDetails;
 		}
 	}
+
+	public function addcomment()
+	{
+		$data = array(
+			'rating' => $this->input->post('rating'),
+			'comment' => $this->input->post('comment'),
+			'username' => $this->session->userdata('username'),
+			'product_id' => $this->input->post('proid'),
+			'user_id' => $this->session->userdata('usr_id')
+//			'user_profile_img_url' => $this->input->post('profileimglink')
+		);
+//		setcookie("ok","dbb");
+		$result = $this->db->insert('rating', $data);
+		//get return value just added to db
+		$insert_id = $this->db->insert_id();
+
+		/*add new user to database*/
+		return $result;
+
+	}
+	public function comments($id)
+	{
+		$this->db->select('rating.*');
+		$this->db->from('rating');
+		$this->db->where('rating.product_id',$id);
+		$query= $this->db->get();
+		setcookie("mewan",$query->num_rows());
+		$comment=array();
+		if($query->num_rows() !=0){
+
+			foreach ($query->result() as $cartRow){
+				$comment[]=new rating($cartRow->id, $cartRow->comment, $cartRow->rating, $cartRow->username, $cartRow->product_id, $cartRow->user_id);
+			}
+			return $comment;
+		}else{
+			return $comment;
+		}
+
+	}
+
 
 }
