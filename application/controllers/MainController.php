@@ -59,10 +59,21 @@ class MainController extends CI_Controller
 	{
 		$this->load->model('Products_manager');
 		$product=$this->Products_manager->productDetail($id);
-		$commen=$this->Products_manager->comments($id);
+		$comment=$this->Products_manager->comments($id);
+
+		$count=count($comment);
+		$allstars=0;
+
+		foreach ($comment as $a){
+			$allstars+=$a->getRating();
+		}
+
+		$avgRating=number_format((float)$allstars/$count, 2, '.', '');;
+
 		$data =array(
 			'product' =>$product,
-			'comments'=>$commen
+			'comments'=>$comment,
+			'avgrating'=>$avgRating
 		);
 
 		$this->load->view('pages/productdetailpage',$data);

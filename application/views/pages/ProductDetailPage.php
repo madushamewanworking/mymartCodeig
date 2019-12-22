@@ -220,9 +220,19 @@
 			}
 		}
 
+		.ui-listview>li p{
+			overflow: visible !important;
+		}
 
 	</style>
-
+<script>
+    $(document).ready(function() {
+        // $("#cart").on("click", function() {
+        //     $(".successcart").popup();
+        //     $(".successcart").popup("open");
+        // });
+    });
+</script>
 	<title>Document</title>
 </head>
 
@@ -312,33 +322,7 @@
 
 
 	<div data-role="content">
-		<!-- <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-l">arrow-l</button> -->
 
-		<!-- testing -->
-		<!-- <a href="../views/ProductPage.html" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" rel="external">Back</a>
-		<label for="title" class="title" >PRODUCT DETAIL</label> -->
-		<!-- <a href="#page1" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-grid">Page 1</a> -->
-
-		<!-- end of testing -->
-
-		<!-- <div class="ui-grid-a">
-				<div class="ui-block-a">
-						<a href="index.html" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Delete</a>
-				</div>
-				<div class="ui-block-b"> -->
-		<!-- <label for="title" class="title" >PRODUCT DETAIL</label> -->
-		<!-- </div>
-</div> -->
-
-		<!--		<div class="ui-grid-a scoreGrid scoreBody">-->
-		<!--			<div class="ui-block-a">-->
-		<!--				<p style="font-size: small;">YOUR MY MARKET LOYALITY POINTS</p>-->
-		<!--				<p style="font-size: x-small;">LEADERBOARD</p>-->
-		<!--			</div>-->
-		<!--			<div class="ui-block-b">-->
-		<!--				<p class="scoreIMG">45</p>-->
-		<!--			</div>-->
-		<!--		</div>-->
 
 		<div class="card" style="width: 18rem;">
 			<?php foreach ($product as $cat): ?>
@@ -374,6 +358,7 @@
 
 					<!--					//////////////////////-->
 					<div class="container" style="margin-top: 20px">
+						<p style="color: #495057; font-weight: 800; font-size: 18px; margin-bottom: .1rem">Product Average Rating: <?php echo $avgrating ?></p>
 						<section class='rating-widget'>
 
 							<!-- Rating Stars Box -->
@@ -408,7 +393,7 @@
 								  action="<?php echo base_url('index.php/maincontroller/addcomment'); ?>" data-ajax="false">
 
 
-								<input type="text" id="rating" name="rating" value="" >
+								<input type="hidden" id="rating" name="rating" value="" >
 
 								<input type="hidden" id="rating" name="proid" value="<?php echo $cat->getProid() ?>" >
 
@@ -436,8 +421,8 @@
 							<li class="cart-item" >
 								<h2><?php echo $cart->getUsername() ?></h2>
 								<div class="row">
-									<p class="col-4">Count <span class="x"><?php echo $cart->getComment() ?></span></p>
-<!--									<p class="col-4">--><?php //echo $cart->getProductPrice() ?><!--</p>-->
+									<p class="col-4"><span class="x"><?php echo $cart->getComment() ?></span></p>
+									<p class="col-4">rating: <strong><?php echo $cart->getRating() ?></strong> stars</p>
 
 								</div>
 
@@ -458,7 +443,9 @@
 	</div> <!-- /content -->
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-
+	<div data-role="popup" id="positionWindow" class="successcart">
+		<p style="font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;">Thank You Payment Sccess!</p>
+	</div>
 
 	<!-- footer -->
 	<div data-role="footer" data-id="foo1" data-position="fixed">
@@ -467,13 +454,13 @@
 				<!-- <li><a href="#" data-icon="home">Home</a></li>
 			<li><a href="#" data-icon="grid">Category</a></li> -->
 				<li>
-					<button type="submit" form="dataform" data-icon="alert"
+					<button type="submit" form="dataform" data-icon="alert" id="cart"
 							formaction="<?php echo base_url('index.php/cartcontroller/addcart'); ?> ">Cart
 					</button>
 				</li>
 
 				<li>
-					<button type="submit" form="dataform" data-icon="heart"
+					<button type="submit" form="dataform" data-icon="heart" id="fav"
 							formaction="<?php echo base_url('index.php/cartcontroller/addfav'); ?> ">Favourites
 					</button>
 				</li>

@@ -32,7 +32,8 @@ class CartController extends CI_Controller
 		$this->load->model('Cart_manager');
 		$product=$this->Cart_manager->addcart();
 
-		redirect('maincontroller');
+		redirect('maincontroller/productDetail/'.$this->input->post('id'));
+//		$this->input->post('id')
 
 	}
 
