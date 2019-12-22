@@ -76,6 +76,10 @@ class CartController extends CI_Controller
 		foreach ($productList as $d){
 			$price+=$d->getProductPrice()*$d->getProductCount();
 		}
+		foreach ($data as $d){
+			setcookie($d,$d);
+//			$price+=$d->getProductPrice()*$d->getProductCount();
+		}
 
 		$pay_data = array(
 			'count' => $purchaseCount,

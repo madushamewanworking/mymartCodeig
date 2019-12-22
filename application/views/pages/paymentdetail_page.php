@@ -153,7 +153,7 @@
 	<!-- slide show start -->
 
 	<div class="breadcrumb flat">
-		<a href="#">Cart</a>
+		<a data-rel="back">Cart</a>
 		<a href="#" class="active">Payment Detail</a>
 		<a href="#">Confirmation</a>
 	</div>
@@ -211,9 +211,9 @@
 	<div role="main" class="ui-content">
 		<ul data-role="listview" class="payment-tab" id="class-list">
 			<li class="cart-item payment-dets">
-				<h2>Axe deodrant for men</h2>
-				<p>Item Count: <span class="item-count">5</span></p>
-				<p>Amount: Rs.<span class="item-amount">2332</span></p>
+<!--				<h2>Axe deodrant for men</h2>-->
+<!--				<p>Item Count: <span class="item-count">5</span></p>-->
+<!--				<p>Amount: Rs.<span class="item-amount">2332</span></p>-->
 
 			</li>
 

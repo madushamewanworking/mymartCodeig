@@ -39,7 +39,7 @@ class Products_manager extends  CI_Model
 		if($query->num_rows() !=0){
 
 			foreach ($query->result() as $cartRow){
-				$cartDetails[]=new Cart($cartRow->productcount, $cartRow->product_id, $cartRow->proname, $cartRow->proprice, $cartRow->proimagelink, $cartRow->user_id);
+				$cartDetails[]=new Cart($cartRow->cart_id,$cartRow->productcount, $cartRow->product_id, $cartRow->proname, $cartRow->proprice, $cartRow->proimagelink, $cartRow->user_id);
 			}
 			return $cartDetails;
 		}else{

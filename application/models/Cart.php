@@ -3,6 +3,7 @@
 
 class Cart
 {
+	private  $cartId;
  private $productCount;
  private $productId;
  private $productName;
@@ -11,14 +12,31 @@ class Cart
  private $userId;
 
 
-	public function __construct($productCount, $productId, $productName, $productPrice, $productImage, $userId)
+	public function __construct($cartId ,$productCount, $productId, $productName, $productPrice, $productImage, $userId)
 	{
+		$this->cartId=$cartId;
 		$this->productCount = $productCount;
 		$this->productId = $productId;
 		$this->productName = $productName;
 		$this->productPrice = $productPrice;
 		$this->productImage = $productImage;
 		$this->userId = $userId;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getCartId()
+	{
+		return $this->cartId;
+	}
+
+	/**
+	 * @param mixed $cartId
+	 */
+	public function setCartId($cartId)
+	{
+		$this->cartId = $cartId;
 	}
 
 
