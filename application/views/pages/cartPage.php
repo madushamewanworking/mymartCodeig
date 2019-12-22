@@ -281,7 +281,7 @@
 
 				<img src="<?php echo $cart->getProductImage() ?>" class="ui-li-thumb m-1">
 				<div class="ui-li-aside">
-					<input type="checkbox" name="cartpro[]" value="<?php echo $cart->getProductId() ?>" data-mini="true">
+					<input type="checkbox" name="cartpro[]" value="<?php echo $cart->getCartId() ?>" data-mini="true">
 				</div>
 
 			</li> <?php } ?>

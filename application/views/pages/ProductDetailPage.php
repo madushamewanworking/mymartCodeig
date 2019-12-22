@@ -471,6 +471,16 @@
 			</ul>
 		</div><!-- /navbar -->
 	</div><!-- /footer -->
+	<script>
+        $(document).ready(function() {
+            $("#fav").on("click", function() {
+                alert("adf")
+                // document.getElementById('form_id').action = "script.php";
+                // $(".successcart").popup();
+                //  $(".successcart").popup("open");
+            });
+        });
+	</script>
 
 
 </body>

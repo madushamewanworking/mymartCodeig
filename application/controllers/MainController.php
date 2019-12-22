@@ -80,6 +80,9 @@ class MainController extends CI_Controller
 	}
 	public function addcomment()
 	{
+		if (!$this->session->userdata('login_status')) {
+			redirect('auth/login_user');
+		}
 		$this->load->model('Products_manager');
 		$this->Products_manager->addcomment();
 		redirect('maincontroller/productDetail/'.$this->input->post('proid'));
@@ -87,6 +90,8 @@ class MainController extends CI_Controller
 
 	public function addpoints()
 	{
+
+
 		$this->load->model('Products_manager');
 		$this->Products_manager->addpoints();
 		redirect('accountcontroller');

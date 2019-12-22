@@ -111,7 +111,7 @@
 		<!-- Lead story block -->
 		<div class="ui-block-a">
 			<div class="ui-body ui-body-d">
-				<a href="<?php echo base_url(); ?>index.php/maincontroller/view/homepage" rel="external"><img src="<?php echo base_url(); ?>assets/images/res/Logo.png" alt="Logo" class="logo"></a>
+				<a href="<?php echo base_url(); ?>index.php/maincontroller" rel="external"><img src="<?php echo base_url(); ?>assets/images/res/Logo.png" alt="Logo" class="logo"></a>
 
 			</div>
 		</div>
