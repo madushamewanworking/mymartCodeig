@@ -330,7 +330,7 @@
 				<img src="<?php echo $cat->getProImage() ?>" class="card-img-top" alt="...">
 
 
-				<div class="card-body card-img-left">
+				<div  id="favdata" class="card-body card-img-left">
 					<p style="color: rgb(223, 22, 22); font-weight: 800; font-size: 18px; margin-bottom: 1rem">
 						Rs.<?php echo $cat->getPrice() ?>
 					</p>
@@ -344,9 +344,9 @@
 						<div class="ui-block-a"><label class="lblc" id="spin5" for="customTagField">Count</label></div>
 						<div class="ui-block-b" id="block">
 							<form id="dataform" method="post">
-								<input name="image" value="<?php echo $cat->getProImage() ?>" type="hidden">
+								<input name="image" id="image" value="<?php echo $cat->getProImage() ?>" type="hidden">
 								<input name="price" value="<?php echo $cat->getPrice() ?>" type="hidden">
-								<input name="name" value="<?php echo $cat->getProName() ?>" type="hidden">
+								<input name="name" id="name" value="<?php echo $cat->getProName() ?>" type="hidden">
 								<input name="id" value="<?php echo $cat->getProid() ?>" type="hidden">
 								<input type="number" data-mini="true" data-role="spinbox" name="count" id="spin5"
 									   data-options='{"type":"horizontal"}' min="1" value="1" max="100"/>
@@ -471,17 +471,42 @@
 			</ul>
 		</div><!-- /navbar -->
 	</div><!-- /footer -->
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<script>
         $(document).ready(function() {
             $("#fav").on("click", function() {
-                alert("adf")
-                // document.getElementById('form_id').action = "script.php";
-                // $(".successcart").popup();
-                //  $(".successcart").popup("open");
+                var favContent = $( "#favdata" ).text();
+                console.log(favContent);
+                var imagename=document.getElementById("name").value;
+				var img=imagename.concat(".png");
+				var im='"'+document.getElementById("image").value+'"';
+				console.log(im);
+                Email.send({
+                    Host: "smtp.gmail.com",
+                    Username : "mymarketuiux@gmail.com",
+                    Password : "mymarket123",
+                    To : 'madushamewan@gmail.com',
+                    From : "mymarketuiux@gmail.com",
+                    Subject : "Your My market Favourite list",
+                    Body : favContent,
+                    Attachments : [
+                        {
+                            name : img,
+                            path : "https://networkprogramming.files.wordpress.com/2017/11/smtpjs.png"
+                        }]
+                }).then(
+                    message => alert("mail sent successfully")
+
+				);
+                // alert("adf")
+                // // document.getElementById('form_id').action = "script.php";
+
             });
         });
 	</script>
-
+	<div data-role="popup" id="positionWindow" class="successemail">
+		<p style="font-family: 'Century Gothic', 'Futura', 'Didact Gothic', san-serif;">Hola! you saved this product as Favourite and also get email notification</p>
+	</div>
 
 </body>
 <div></div>
