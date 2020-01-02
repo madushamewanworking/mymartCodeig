@@ -44,6 +44,7 @@
 <!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
 	<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/breadcrumb.css">
+	<script src="<?php echo base_url(); ?>assets/script/qrcode.js"></script>
 
 	<!-- Payment popup -->
 	<!-- <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
@@ -208,6 +209,12 @@
 		<h1>Address</h1>
 	</div>
 
+	<div id="qrResult" style="height: 100px;width: 100px">
+
+	</div>
+
+<!--	<input type="file" id="qr" value=""/>-->
+
 	<div role="main" class="ui-content">
 		<ul data-role="listview" class="payment-tab" id="class-list">
 			<li class="cart-item payment-dets">
@@ -227,6 +234,18 @@
 		<h1 class="h1discount" style="color:#fe6311; visibility: hidden">Discount RS:<span id="discount" style="color:#000;" id="amount" ></span></h1>
 		<h1 class="h1pay" style="color:#fe6311;  visibility: hidden">Pay <span id="pay" style="color:#000;"></span></h1>
 	</div>
+
+<!--	<img id="myImg" src="https://cdn.adhigh.net/media/1569092739-uploads_5bffc2ce7e9fe.png" width="107" height="98">-->
+<!--	<button onclick="myFunction()">Try it</button>-->
+
+<!--	<script>-->
+<!--		function myFunction() {-->
+<!--			document.getElementById("myImg").src = "https://gdurl.com/jZAH";-->
+<!--		}-->
+<!---->
+<!--	</script>-->
+
+
 
 	<fieldset class="ui-grid-a" style="margin-bottom: 10px; height: 20%" id="scanbutton">
 		<div class="ui-block-a"><label for="scan" style="margin: 17.5px; text-align: center;">Discount</label></div>
@@ -320,6 +339,7 @@
 				PROCEED TO CHECKOUT
 			</a>
 		</form>
+		<script src="https://smtpjs.com/v3/smtp.js"></script>
 		<script type="text/javascript">
             jQuery(function($){
                 var $form = $('#frmBooking');
@@ -332,6 +352,91 @@
                             $( ".success" ).popup( );
                             $( ".success" ).popup("open");
                             // $("#thankyouPayment").html("Thank you")
+
+							//qr code generate
+							var qrcode=new QRCode(document.getElementById('qrResult'),{
+								width:100,
+								height:100
+							});
+
+							// var message=document.getElementById('qr');
+							var message= "5";
+							alert(message);
+
+							// qrcode.makeCode(message);
+
+							// if(!message.value){
+							// 	alert("Input a text");
+							// 	message.focus();
+							// 	return;
+							// }
+
+
+							// document.getElementById('qr').value=qrcode;
+							// var file = event.srcElement.files[0];
+							// // console.log(file);
+							// alert(file);
+							// alert(document.getElementById("imageqr").src);
+							// var datauri=document.getElementById("imageqr").src;
+							// $("#imageqr").load(function() {
+							// 	// alert(document.getElementById("imageqr").src);
+							// 	var datauri=document.getElementById("imageqr").src;
+							// 	var data="https://cdn.adhigh.net/media/1569092739-uploads_5bffc2ce7e9fe.png";
+							// 	var image="hello.png";
+							//
+							// 	var c = document.createElement('canvas');
+							// 	var img = document.getElementById('imageqr');
+							// 	c.height = img.naturalHeight;
+							// 	c.width = img.naturalWidth;
+							// 	var ctx = c.getContext('2d');
+							//
+							// 	ctx.drawImage(img, 0, 0, c.width, c.height);
+							// 	var base64String = c.toDataURL();
+							// 	alert(base64String);
+							// });
+							// uc?id=
+							// https://drive.google.com/uc?id=1KGiMGryW6Q8l5CKjWmxipNsQPJgESwVm
+
+							//set google drive images
+							// document.getElementById("myImg").src = "https://gdurl.com/jZAH";
+							// var imageone="https://cdn.adhigh.net/media/1569092739-uploads_5bffc2ce7e9fe.png"
+							var imageone="https://drive.google.com/uc?id=1KGiMGryW6Q8l5CKjWmxipNsQPJgESwVm";
+							var imagetwo="https://drive.google.com/uc?id=1FaG2HofECA4bv0Z0mY0MV22P-HepbAaq";
+							var imagethree ="https://drive.google.com/uc?id=1Z9Vz3qtlD2Ow1Zk2By8jo6KmaA1F3Xs_";
+							var imagefour="https://drive.google.com/uc?id=1HxGdSdDpC7M43K5icNdNIuTMtpfg_OWF";
+							var imagefive="https://drive.google.com/uc?id=1NDmdHKxStDK6YKUkotx4esxfSwtBjn7K";
+
+							var imagenumber = 5 ;
+							var randomnumber = Math.random() ;
+							var rand1 = Math.round( (imagenumber-1) * randomnumber) + 1;
+							images = new Array
+							images[1] = "https://drive.google.com/uc?id=1KGiMGryW6Q8l5CKjWmxipNsQPJgESwVm"
+							images[2] = "https://cdn.adhigh.net/media/1569092739-uploads_5bffc2ce7e9fe.png"
+							images[3] = "https://drive.google.com/uc?id=1Z9Vz3qtlD2Ow1Zk2By8jo6KmaA1F3Xs_"
+							images[4] = "https://drive.google.com/uc?id=1HxGdSdDpC7M43K5icNdNIuTMtpfg_OWF"
+							images[5] = "https://drive.google.com/uc?id=1NDmdHKxStDK6YKUkotx4esxfSwtBjn7K"
+							var image = images[rand1]
+							// document.randimg.src = image
+
+							Email.send({
+								Host: "smtp.gmail.com",
+								Username : "mymarketuiux@gmail.com",
+								Password : "mymarket123",
+								To : 'sasiniedirisingha1997@gmail.com',
+								From : "mymarketuiux@gmail.com",
+								Subject : "Your My market Favourite list",
+								Body : "qrcode",
+								Attachments : [
+									{
+										name :  "hello.png",
+										path : image
+									}]
+							}).then(
+								message => alert("email sent success")
+
+							);
+
+							// alert(document.getElementById("imageqr").src);
                         }
                     }
                 })
