@@ -69,6 +69,7 @@
 			all: unset;
 		}
 		}
+
 	</style>
 	<title>Home</title>
 </head>
@@ -103,34 +104,50 @@
 								<div style="padding:10px 20px;" class="pop">
 									            <h3>Search for Products</h3>
 									<form>
-										<input data-type="search" id="searchForCollapsibleSet">
+										<input data-type="search" id="searchForCollapsibleSetChildren">
 									</form>
-									<div  data-role="collapsible-set" data-filter="true" data-inset="true" id="collapsiblesetForFilter" data-input="#searchForCollapsibleSet">
-										<div id="lisearch" data-role="collapsible" data-filtertext="Animals">
-											<h3>Animals</h3>
+									<div  data-role="collapsible-set" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+										<div  data-role="collapsible" data-iconpos="right" data-filtertext="category <?php echo $strcat ?>">
+											<h3 >Category</h3>
 											<ul data-role="listview" data-inset="false">
-												<li id="lisearch" ><a href="#">Apple</a></li>
-												<li>Dogs</li>
-												<li>Lizards</li>
-												<li>Snakes</li>
+												<?php foreach ($categories as $cat): ?>
+<!--												<li id="lisearch" data-filtertext="category ">--><?php //echo $strcat ?><!--</li>-->
+												<li id="lisearch" data-filtertext="category <?php echo $cat->getCategoryName() ?>"><a href="<?php echo site_url('/maincontroller/productbycategory/' . $cat->getCatId()); ?>"
+																									data-ajax="false"><?php echo $cat->getCategoryName() ?></a></li>
+
+
+												<?php endforeach; ?>
+
+<!--												<li data-filtertext="Animals Dogs">Dogs</li>-->
+<!--												<li data-filtertext="Animals Lizards">Lizards</li>-->
+<!--												<li data-filtertext="Animals Snakes">Snakes</li>-->
 											</ul>
 										</div>
-										<div id="lisearch" data-role="collapsible" data-filtertext="Cars">
-											<h3>Cars</h3>
+										<div data-role="collapsible" data-iconpos="right" data-filtertext="products <?php echo $strpro ?>">
+											<h3>Products</h3>
 											<ul data-role="listview" data-inset="false">
-												<li>Acura</li>
-												<li>Audi</li>
-												<li>BMW</li>
-												<li>Cadillac</li>
+												<?php foreach ($products as $cat): ?>
+													<!--												<li id="lisearch" data-filtertext="category ">--><?php //echo $strcat ?><!--</li>-->
+													<li id="lisearch" data-filtertext="category <?php echo $cat->getProName() ?>"><a href="<?php echo site_url('/maincontroller/productDetail/' . $cat->getProId()); ?>"
+																																		  data-ajax="false"><?php echo $cat->getProName() ?></a></li>
+
+
+												<?php endforeach; ?>
 											</ul>
 										</div>
-										<div id="lisearch"  data-role="collapsible" data-filtertext="Planets">
-											<h3>Planets</h3>
+										<div data-role="collapsible" data-iconpos="right" data-filtertext="menu home promotion account cart category aboutus">
+											<h3>Menu Navigation</h3>
 											<ul data-role="listview" data-inset="false">
-												<li>Earth</li>
-												<li>Jupiter</li>
-												<li>Mars</li>
-												<li>Mercury</li>
+												<li id="lisearch" data-filtertext="menu home"><a href="<?php echo base_url(); ?>index.php/maincontroller" data-icon="grid" rel="external">Home page</a></li>
+
+												<li id="lisearch" data-filtertext="menu category"><a href="<?php echo base_url(); ?>index.php/categorycontroller" data-icon="grid" rel="external">Category page</a></li>
+												<li id="lisearch" data-filtertext="menu promotion"><a href="<?php echo base_url(); ?>index.php/promotioncontroller" data-icon="grid" rel="external">Promotion page</a></li>
+												<li id="lisearch" data-filtertext="menu account"><a href="<?php echo base_url(); ?>index.php/accountcontroller" data-icon="grid" rel="external">My Account page</a></li>
+												<li id="lisearch" data-filtertext="menu cart"><a href="<?php echo base_url(); ?>index.php/cartcontroller" data-icon="grid" rel="external">Cart page</a></li>
+
+												<li id="lisearch" data-filtertext="menu aboutus"><a href="<?php echo base_url(); ?>index.php/maincontroller/view/aboutus"" data-icon="grid" rel="external">About Us page</a></li>
+
+
 											</ul>
 										</div>
 									</div>
@@ -288,9 +305,10 @@
 	<!-- gerid view end -->
 
 	<!-- addvertisement -->
-	<img src="<?php echo base_url(); ?>assets/images/res/Logo.png" class="img-fluid"
-		 style=" display: block; margin-left: auto; margin-right: auto; width: 100%; max-height: 100px;"
-		 alt="Responsive image">
+<!--	<img src="--><?php //echo base_url(); ?><!--assets/images/res/Logo.png" class="img-fluid"-->
+<!--		 style=" display: block; margin-left: auto; margin-right: auto; width: 100%; max-height: 100px;"-->
+<!--		 alt="Responsive image">-->
+	<iframe style=" display: block; margin-left: auto; margin-right: auto; width: 100%; max-height: 200px;" width="560" height="315" src="<?php echo base_url(); ?>assets/images/mymartvideo.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 	<!-- advertisement end -->
 

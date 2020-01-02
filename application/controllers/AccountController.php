@@ -4,8 +4,28 @@
 class AccountController extends CI_Controller
 {
 	public function index()
+
 	{
-		$this->load->view('pages/accountpage');
+		$this->load->model('LeaderboardManager');
+		$usrinfo=$this->LeaderboardManager->getInfo();
+
+		$this->load->model('Auth_manager');
+		$personaldata=$this->Auth_manager->getUserDetails($this->session->userdata('usr_id'));
+
+
+
+//		setcookie("hola",$usrinfo);
+
+//		foreach ($usrinfo as $a){
+//			setcookie("aaaaaaaaaaaa",$a->getPoints());
+//		}
+
+		$Details =array(
+			'userinfo'=>$usrinfo,
+			'person'=>$personaldata
+		);
+
+		$this->load->view('pages/accountpage',$Details);
 	}
 
 

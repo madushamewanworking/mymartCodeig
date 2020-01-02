@@ -175,8 +175,8 @@ class Products_manager extends  CI_Model
 		$data = array(
 			'username' =>$this->session->userdata('username'),
 			'point' => $this->input->post('points'),
-			'purchase_count' => 0,
-			'level' => 1,
+			'purchase_count' => $this->input->post('count'),
+			'level' => $this->input->post('level'),
 			'proimagelink' => "http://www.evanto.online/wp-content/uploads/2018/03/dummy-profile-pic-1-370x370.jpg"
 //			'user_profile_img_url' => $this->input->post('profileimglink')
 		);

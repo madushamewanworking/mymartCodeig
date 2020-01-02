@@ -5,8 +5,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/cart_page.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/breadcrumb.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/cart_page.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/breadcrumb.css">
 
 	<!--  cdn config jquey mobile -->
 	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
@@ -170,7 +170,7 @@
 				<!-- <a class="ui-link" href="" > <img id="Logo" src="../assets/images/res/Logo.png"> </a> -->
 				<!-- <a href="info.html" data-icon="info-page" class="ui-btn-right" data-transition="flip" data-iconpos="notext" data-theme="a"></a> -->
 				<!-- <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-myicon"> -->
-				<img src="../assets/images/res/Logo.png" alt="Logo, Facebook"  class="logo" style="float:left; display:inline; width: 36%;" />
+				<img src="<?php echo base_url();?>assets/images/res/Logo.png" alt="Logo, Facebook"  class="logo" style="float:left; display:inline; width: 36%;" />
 			</div>
 			<div class="ui-block-b">
 				<div class="ui-grid-a ">

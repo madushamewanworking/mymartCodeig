@@ -75,6 +75,18 @@ class Cart_manager extends CI_Model
 	}
 
 
+	public function getBuynowProduct(){
+		$inputData=array(
+			'productcount' => $this->input->post('count'),
+			'product_id'=>$this->input->post('id'),
+			'proname' => $this->input->post('name'),
+			'proprice' => $this->input->post('price'),
+			'proimagelink' => $this->input->post('image'),
+			'user_id' => $this->session->userdata('usr_id')
+		);
+
+		return $this->db->insert('cart', $inputData);
+	}
 
 	public function getFavChekedList($data_set){
 //		$data_set=array(
