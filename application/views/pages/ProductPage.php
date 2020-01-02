@@ -75,6 +75,15 @@
 			margin-left: 4%;
 			margin-top: 1%;
 		}
+
+		#gridA{
+			background-color: #F0F5F2;
+			height: 52px !important;
+		}
+		#gridB{
+			background-color: #F0F5F2;
+			height: 42px;
+		}
 	</style>
 
 
@@ -172,6 +181,8 @@
 
 
 
+
+
 	<!-- grid view -->
 
 	<!-- <div data-role="header">
@@ -181,7 +192,45 @@
 
 	<!-- /header -->
 	<div role="main" class="ui-content">
-		<ul data-role="listview" data-inset="true">
+<!--		<div class="ui-grid-a">-->
+<!--			<div class="ui-block-a" id="gridB">-->
+<!--				 -->
+<!--			</div>-->
+<!--			<div class="ui-block-b" id="gridA">-->
+<!--				-->
+<!---->
+<!--			</div>-->
+<!---->
+<!---->
+<!---->
+<!--		</div>-->
+
+		<div data-role="controlgroup" data-type="horizontal" data-mini="true">
+			   
+			  <a href="#" class="ui-btn ui-corner-all" onclick="sortByName()">Sort By: Product Name</a>
+			    <a href="#" class="ui-btn ui-corner-all" onclick="sortByPrice()">Sort By: Price</a>
+			   
+		</div>
+
+		<select class="form-control form-control-sm country" >
+			<option value="allval" > Show All</option>
+			<option value="prices"> Filter by: Price</option>
+			<option value="namesval">Filter by: Product Name -(A-z)</option>
+		</select>
+		<input type="text" id="myInputOne" onkeyup="filterProducts()" placeholder="Search for All Content" title="Type in a name" style="display: block">
+		<input type="text"  id="myInputTwo"  onkeyup="filterProductsWithPrices()"  placeholder="Search for Prices" title="Type in a name" style="display: none">
+		<input type="text" id="myInputThree" onkeyup="filterProductsWithNames()"  placeholder="Search for Names" title="Type in a name" style="display: none">
+
+
+		<!--		<select name="select-native-2" id="select-native-2" data-mini="true" class="country">-->
+<!--			<option value="standard" > Show All</option>-->
+<!--			<option value="standard"> Sort by: Price</option>-->
+<!--			<option value="rush">Sort by: Product Name -(A-z)</option>-->
+<!--		</select>-->
+
+
+
+		<ul data-role="listview" data-inset="true" id="myUL">
 
 <!--			<li><a href="../views/ProductDetailsPage.html" rel="external">-->
 <!--					<img src="../assets/images/res/Logo.png" class="ui-li-thumb">-->
@@ -198,7 +247,7 @@
 						<!--						</a>-->
 						<h2><?php echo $cat->getProName() ?></h2>
 						<p><?php echo $cat->getProDescription() ?></p>
-						<p class="ui-li-aside"><?php echo $cat->getPrice() ?></p>
+						<h3 class="ui-li-aside priceClass" align="right"><?php echo $cat->getPrice() ?></h3>
 					</a>
 				</li>
 			<?php endforeach;  ?>
@@ -223,6 +272,247 @@
 <!--				</a></li>-->
 
 		</ul>
+
+		<script>
+			// $(document).ready(function(){
+			// 	document.getElementById("myInputOne").style.display= "block";
+			// 	var input1 = document.getElementById("myInputOne");
+			//
+			// 	input1.setAttribute("type", "text");
+			// 	var input2 = document.getElementById("myInputTwo");
+			//
+			// 	input2.setAttribute("type", "hidden");
+			// 	var input3 = document.getElementById("myInputThree");
+			//
+			// 	input3.setAttribute("type", "hidden");
+			//
+			// 	document.getElementById("menuId").value = "allval" ;
+			// });
+
+			$("select.country").change(function(e){
+
+				var selectedCountry = $(this).children("option:selected").val();
+				// alert("You have selected the country - " + selectedCountry);
+				$('select.country').selectmenu('refresh');
+				e.preventDefault();
+				if(selectedCountry == "allval"){
+					document.getElementById("myInputOne").style.display= "block";
+					// document.getElementById("myInputTwo").style.display= "none";
+					// document.getElementById("myInputThree").style.display= "none";
+					var input1 = document.getElementById("myInputOne");
+
+					input1.setAttribute("type", "text");
+					var input2 = document.getElementById("myInputTwo");
+
+					input2.setAttribute("type", "hidden");
+					var input3 = document.getElementById("myInputThree");
+
+					input3.setAttribute("type", "hidden");
+
+				}else if(selectedCountry == "prices"){
+					// document.getElementById("myInputOne").style.display= "none";
+					document.getElementById("myInputTwo").style.display= "block";
+					// document.getElementById("myInputThree").style.display= "none";
+					var input1 = document.getElementById("myInputOne");
+
+					input1.setAttribute("type", "hidden");
+					var input2 = document.getElementById("myInputTwo");
+
+					input2.setAttribute("type", "text");
+					var input3 = document.getElementById("myInputThree");
+
+					input3.setAttribute("type", "hidden");
+
+				}else if(selectedCountry == "namesval"){
+					// document.getElementById("myInputOne").style.display= "none";
+					// document.getElementById("myInputTwo").style.display= "none";
+					document.getElementById("myInputThree").style.display= "block";
+					var input1 = document.getElementById("myInputOne");
+
+					input1.setAttribute("type", "hidden");
+					var input2 = document.getElementById("myInputTwo");
+
+					input2.setAttribute("type", "hidden");
+					var input3 = document.getElementById("myInputThree");
+
+					input3.setAttribute("type", "text");
+				}
+			});
+
+			function filterProducts() {
+				var input, filter, ul, li, a, i, txtValue;
+				input = document.getElementById("myInputOne");
+				filter = input.value.toUpperCase();
+				ul = document.getElementById("myUL");
+				li = ul.getElementsByTagName("li");
+				for (i = 0; i < li.length; i++) {
+					a = li[i].getElementsByTagName("a")[0];
+					txtValue = a.textContent || a.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+					} else {
+						li[i].style.display = "none";
+					}
+				}
+
+
+			}
+			
+			function filterProductsWithNames() {
+				var input, filter, ul, li, a, i, txtValue,para;
+				input = document.getElementById("myInputThree");
+				filter = input.value.toUpperCase();
+				ul = document.getElementById("myUL");
+				para = ul.getElementsByTagName("h2");
+				li=ul.getElementsByTagName("li")
+				for (i = 0; i < para.length; i++) {
+					a = li[i].getElementsByTagName("h2")[0];
+					txtValue = a.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+					} else {
+						li[i].style.display = "none";
+					}
+				}
+			}
+
+			function function1(){
+				alert("hello")
+			}
+
+			function filterProductsWithDes() {
+				var input, filter, ul, li, a, i, txtValue,para;
+				input = document.getElementById("myInputTwo");
+				filter = input.value.toUpperCase();
+				ul = document.getElementById("myUL");
+				para = ul.getElementsByClassName("priceClass");
+				li=ul.getElementsByTagName("li")
+				for (i = 0; i < para.length; i++) {
+					a = li[i].getElementsByTagName("p")[0];
+					txtValue = a.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+					} else {
+						li[i].style.display = "none";
+					}
+				}
+			}
+
+			function filterProductsWithPrices() {
+				var input, filter, ul, li, a, i, txtValue,para;
+				input = document.getElementById("myInputTwo");
+				filter = input.value.toUpperCase();
+				ul = document.getElementById("myUL");
+				para = ul.getElementsByTagName("h3");
+				li=ul.getElementsByTagName("li")
+				for (i = 0; i < para.length; i++) {
+					a = li[i].getElementsByTagName("h3")[0];
+					txtValue = a.innerText;
+					if (txtValue.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+					} else {
+						li[i].style.display = "none";
+					}
+				}
+			}
+
+			// function filterProductsWithPrice() {
+			// 	var input, filter, ul, li, a, i, txtValue;
+			// 	input = document.getElementById("myInput");
+			// 	filter = input.value.toUpperCase();
+			// 	ul = document.getElementById("myUL");
+			// 	li = ul.getElementsByTagName("li");
+			// 	for (i = 0; i < li.length; i++) {
+			// 		a = li[i].getElementsByTagName("a")[0];
+			// 		txtValue = a.textContent || a.innerText;
+			// 		if (txtValue.toUpperCase().indexOf(filter) > -1) {
+			// 			li[i].style.display = "";
+			// 		} else {
+			// 			li[i].style.display = "none";
+			// 		}
+			// 	}
+			// }
+
+			function sortByName() {
+					// alert("hello one")
+				var list, i, switching, b, shouldSwitch;
+				list = document.getElementById("myUL");
+				switching = true;
+				/* Make a loop that will continue until
+				no switching has been done: */
+				while (switching) {
+					// start by saying: no switching is done:
+					switching = false;
+					b = list.getElementsByTagName("li");
+					c=list.getElementsByTagName("h2")
+					// Loop through all list-items:
+					for (i = 0; i < (c.length - 1); i++) {
+						// start by saying there should be no switching:
+						shouldSwitch = false;
+						/* check if the next item should
+						switch place with the current item: */
+						d = b[i].getElementsByTagName("h2")[0].innerText;
+						e = b[i+1].getElementsByTagName("h2")[0].innerText;
+
+						if (d.toLowerCase() > e.toLowerCase()) {
+							/* if next item is alphabetically
+							lower than current item, mark as a switch
+							and break the loop: */
+							shouldSwitch = true;
+							break;
+						}
+					}
+					if (shouldSwitch) {
+						/* If a switch has been marked, make the switch
+						and mark the switch as done: */
+						b[i].parentNode.insertBefore(b[i + 1], b[i]);
+						switching = true;
+					}
+				}
+			}
+
+			function sortByPrice() {
+				var list, i, switching, b, shouldSwitch;
+				list = document.getElementById("myUL");
+				switching = true;
+				/* Make a loop that will continue until
+				no switching has been done: */
+				while (switching) {
+					// start by saying: no switching is done:
+					switching = false;
+					b = list.getElementsByTagName("li");
+					c=list.getElementsByTagName("h3")
+					// Loop through all list-items:
+					for (i = 0; i < (c.length - 1); i++) {
+						// start by saying there should be no switching:
+						shouldSwitch = false;
+						/* check if the next item should
+						switch place with the current item: */
+						d = b[i].getElementsByTagName("h3")[0].innerText;
+						e = b[i+1].getElementsByTagName("h3")[0].innerText;
+
+						var valone = parseInt(d);
+						var valtwo = parseInt(e);
+
+						if (valone > valtwo) {
+							/* if next item is alphabetically
+							lower than current item, mark as a switch
+							and break the loop: */
+							shouldSwitch = true;
+							break;
+						}
+					}
+					if (shouldSwitch) {
+						/* If a switch has been marked, make the switch
+						and mark the switch as done: */
+						b[i].parentNode.insertBefore(b[i + 1], b[i]);
+						switching = true;
+					}
+				}
+			}
+
+
+		</script>
 	</div><!-- /content -->
 
 	<!-- gerid view end -->
@@ -242,6 +532,9 @@
 		</div>
 	</div>
 </div>
+
+
+
 
 </body>
 <div></div>
