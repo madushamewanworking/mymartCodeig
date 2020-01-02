@@ -203,7 +203,7 @@
 			<?php foreach ($leaderboardData as $leaderboard){ ?>
 
 
-			<?php if($leaderboard->getLevel()==1){?>
+			<?php if($leaderboard->getPoints()>1000){?>
 			<li class="cart-item ldr-item" >
 				<h2><?php echo $leaderboard->getUsername() ?></h2>
 				<img src="<?php echo $leaderboard->getImageLink()?>" class="ui-li-thumb m-1 ldr ldr_img1">
@@ -226,7 +226,7 @@
 
 
 
-			<?php if($leaderboard->getLevel()==2){?>
+			<?php if($leaderboard->getPoints()>=500 && $leaderboard->getPoints()<1000){?>
 				<li class="cart-item ldr-item" >
 					<h2><?php echo $leaderboard->getUsername() ?></h2>
 					<img src="<?php echo $leaderboard->getImageLink()?>" class="ui-li-thumb m-1 ldr ldr_img2">
@@ -250,7 +250,7 @@
 				<?php } ?>
 
 
-			<?php if($leaderboard->getLevel()==3){?>
+			<?php if($leaderboard->getPoints()>=300 && $leaderboard->getPoints()<499){?>
 				<li class="cart-item ldr-item" >
 					<h2><?php echo $leaderboard->getUsername() ?></h2>
 					<img src="<?php echo $leaderboard->getImageLink()?>" class="ui-li-thumb m-1 ldr ldr_img3">
@@ -271,7 +271,7 @@
 				<?php } ?>
 
 
-			<?php if($leaderboard->getLevel()==4){?>
+			<?php if($leaderboard->getPoints()>=200 && $leaderboard->getPoints()<299){?>
 				<li class="cart-item ldr-item" >
 					<h2><?php echo $leaderboard->getUsername() ?></h2>
 					<img src="<?php echo $leaderboard->getImageLink()?>" class="ui-li-thumb m-1 ldr ldr_img4">
@@ -291,7 +291,7 @@
 				</li>
 				<?php }?>
 
-			<?php if($leaderboard->getLevel()==5){?>
+			<?php if($leaderboard->getPoints()>=0 && $leaderboard->getPoints()<199){?>
 				<li class="cart-item ldr-item" >
 					<h2><?php echo $leaderboard->getUsername() ?></h2>
 					<img src="<?php echo $leaderboard->getImageLink()?>" class="ui-li-thumb m-1 ldr ldr_img4">
@@ -300,7 +300,7 @@
 					</div>
 
 					<div class="col-8 progress">
-						<div class="completed bar4">
+						<div class="completed bar5">
 
 						</div>
 					</div>

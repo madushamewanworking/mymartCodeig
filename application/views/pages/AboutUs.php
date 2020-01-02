@@ -74,7 +74,7 @@
 			font-size: 10px;
 			display: block;
 			margin: .2em 30% .8em;
-			padding: 10;
+			padding: 10px !important;
 			text-overflow: ellipsis;
 			overflow: hidden;
 			white-space: nowrap;
@@ -84,7 +84,7 @@
 			color: #fff;
 			font-weight: bold;
 			text-shadow: 0 1px 1px #335413;
-			font-family:'Century Gothic','Futura','Didact Gothic',san-serif;
+			font-family:'Century Gothic','Futura','Didact Gothic',san-serif ;
 
 		}
 

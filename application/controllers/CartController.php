@@ -18,7 +18,15 @@ class CartController extends CI_Controller
 
 		$this->load->view('pages/cartPage',$Details);
 	}
+	public function buynow(){
 
+		$this->load->model('Cart_manager');
+		$productList=$this->Cart_manager->getBuynowProduct();
+		$this->getCartDetails();
+
+
+
+	}
 
 
 	public function addcart(){

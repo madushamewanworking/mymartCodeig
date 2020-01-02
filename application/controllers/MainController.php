@@ -33,8 +33,23 @@ class MainController extends CI_Controller
 
 		$products=$this->Products_manager->getProductItems();
 
+		$strcategory="";
+
+		foreach ($categories as $cat){
+			$strcategory.=" ".$cat->getCategoryName();
+		}
+
+		$strproduct="";
+		foreach ($products as $pro){
+			$strproduct.=" ".$pro->getProName();
+		}
+
+		setcookie("saa",$strcategory);
+
 
 		$catDetails =array(
+			'strcat'=>$strcategory,
+			'strpro'=>$strproduct,
 			'categories'=>$categories,
 			'products' =>$products
 		);

@@ -56,8 +56,8 @@
 
 
 	<!--	<script type="text/javascript" src="PATH/TO/YOUR/COPY/OF/jquery.mousewheel.min.js"></script>-->
-
-
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/cart_page.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/breadcrumb.css">
 	<script type="text/javascript" src="http://dev.jtsage.com/cdn/spinbox/latest/jqm-spinbox.min.js"></script>
 
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -66,7 +66,7 @@
 
 	<script src="<?php echo base_url(); ?>assets/script/star.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/star.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/css/cart_page.css">
+
 
 	<!-- rating system start -->
 	<!--	<script src="--><?php //echo base_url(); ?><!--assets/starrr-gh-pages/dist/starrr.js"></script>-->
@@ -138,6 +138,17 @@
 
 			font: 32px Arial;
 		}
+		.flat a.active,.flat a.active:after{
+			background-color: #A2C432 !important;
+			color: black;
+
+		}
+		#a{
+			color: black;
+		}
+		.ui-bar-a {
+			background-color: white;
+		}
 
 		.card {
 
@@ -159,8 +170,8 @@
 		}
 
 		/* .ui-grid-a {
-			font-family: sans-serif;
-			font-size: 18px;
+		font-family: sans-serif;
+		font-size: 18px;
 		} */
 
 		.ui-page.ui-page-active {
@@ -183,7 +194,7 @@
 			margin-top: 7%;
 			/*margin: 0 auto !important; !* Added *!*/
 			/*float: none ; !* Added *!*/
-			/*margin-bottom: 10px !important;  !* Added *!*/
+			/*margin-bottom: 10px !important; !* Added *!*/
 		}
 
 		.card-body {
@@ -198,7 +209,7 @@
 		}
 
 		/*.ui-block-b {*/
-		/*	*/
+		/* */
 		/*}*/
 		#block {
 			background-color: #F4F6F5 !important;
@@ -208,21 +219,6 @@
 		@media only screen and (min-width: 767px) {
 			.card {
 				margin-top: 4%;
-				width: 40em !important;
-			}
-		}
-
-		/*i pad pro land*/
-		@media only screen and (min-width: 1020px) {
-			.card {
-				margin-top: 2%;
-				width: 25em !important;
-			}
-		}
-
-		.ui-listview>li p{
-			overflow: visible !important;
-		}
 
 	</style>
 <script>
@@ -450,6 +446,11 @@
 	<!-- footer -->
 	<div data-role="footer" data-id="foo1" data-position="fixed">
 		<div data-role="navbar" data-iconpos="top">
+
+			<button class="cart-btn my-btn" id="buyNow" form="dataform" type="submit" formaction="<?php echo base_url('index.php/cartcontroller/buynow'); ?> "
+					style="background-color: #fe6311 !important; height: 40px !important; margin-bottom: 0px !important; margin-top: 0px !important; color:white !important;">
+				BUY NOW
+			</button>
 			<ul>
 				<!-- <li><a href="#" data-icon="home">Home</a></li>
 			<li><a href="#" data-icon="grid">Category</a></li> -->

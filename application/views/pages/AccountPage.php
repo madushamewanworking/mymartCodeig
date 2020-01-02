@@ -156,7 +156,12 @@ $username= $this->session->userdata('username');
 				<img src="<?php echo base_url(); ?>assets/images/res/Logo.png" class="avatar" alt="Responsive image">
 				<div class="user_data">
 					<h2><?php echo $username ?></h2>
-					<p>Description Level,</p>
+					<?php foreach ($person as $cat): ?>
+<!--						<input type="hidden" id="expoints" name="expoints" value="--><?php //echo $cat->getPoints() ?><!--" >-->
+<!--						<input type="hidden" id="extime" name="extime" value="--><?php //echo $cat->getPurchaseCount() ?><!--" >-->
+						<p><?php echo $cat->getAddress() ?></p>
+					<?php endforeach; ?>
+
 				</div>
 
 			</div>
@@ -202,12 +207,21 @@ $username= $this->session->userdata('username');
                     let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
                     scanner.addListener('scan', function (content) {
                         // alert(content);
-
+                        var a= document.getElementById("expoints").value;
+                        var b= document.getElementById("extime").value;
+                        // alert(document.getElementById("expoints").value);
 
                         var points=((content*1000)/1000)*50;
+						//
+                        // // alert(points);
+                        document.getElementById("points").value = +a+points;
 
-                        // alert(points);
-                        document.getElementById("points").value = points;
+                        var count=+b+1;
+                        document.getElementById("count").value = count;
+                        document.getElementById("level").value = Math.ceil(count/2);
+
+                        // alert( Math.ceil(count/2))
+
                         document.getElementById("pointform").submit();
 
                     });
@@ -235,10 +249,23 @@ $username= $this->session->userdata('username');
 
 
 		<input type="hidden" id="points" name="points" value="" >
+		<input type="hidden" id="count" name="count" value="" >
+		<input type="hidden" id="level" name="level" value="" >
 
 
 	</form>
 
+	<form method="post" id="existing">
+
+		<?php foreach ($userinfo as $cat): ?>
+			<input type="hidden" id="expoints" name="expoints" value="<?php echo $cat->getPoints() ?>" >
+			<input type="hidden" id="extime" name="extime" value="<?php echo $cat->getPurchaseCount() ?>" >
+
+		<?php endforeach; ?>
+
+
+
+	</form>
 
 		<!-- <form action="/action_page.php" id="usrform"> -->
 
