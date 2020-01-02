@@ -363,7 +363,7 @@
 							var message= "5";
 							alert(message);
 
-							// qrcode.makeCode(message);
+							qrcode.makeCode(message);
 
 							// if(!message.value){
 							// 	alert("Input a text");
@@ -409,13 +409,13 @@
 							var imagenumber = 5 ;
 							var randomnumber = Math.random() ;
 							var rand1 = Math.round( (imagenumber-1) * randomnumber) + 1;
-							images = new Array
-							images[1] = "https://drive.google.com/uc?id=1KGiMGryW6Q8l5CKjWmxipNsQPJgESwVm"
-							images[2] = "https://cdn.adhigh.net/media/1569092739-uploads_5bffc2ce7e9fe.png"
-							images[3] = "https://drive.google.com/uc?id=1Z9Vz3qtlD2Ow1Zk2By8jo6KmaA1F3Xs_"
-							images[4] = "https://drive.google.com/uc?id=1HxGdSdDpC7M43K5icNdNIuTMtpfg_OWF"
-							images[5] = "https://drive.google.com/uc?id=1NDmdHKxStDK6YKUkotx4esxfSwtBjn7K"
-							var image = images[rand1]
+							images = new Array;
+							images[1] = "https://drive.google.com/uc?id=1KGiMGryW6Q8l5CKjWmxipNsQPJgESwVm";
+							images[2] = "https://cdn.adhigh.net/media/1569092739-uploads_5bffc2ce7e9fe.png";
+							images[3] = "https://drive.google.com/uc?id=1Z9Vz3qtlD2Ow1Zk2By8jo6KmaA1F3Xs_";
+							images[4] = "https://drive.google.com/uc?id=1HxGdSdDpC7M43K5icNdNIuTMtpfg_OWF";
+							images[5] = "https://drive.google.com/uc?id=1NDmdHKxStDK6YKUkotx4esxfSwtBjn7K";
+							var image = images[rand1];
 							// document.randimg.src = image
 
 							Email.send({
