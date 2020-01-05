@@ -55,12 +55,14 @@
 
 	<!-- main library -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/jquery/jquery.mobile-1.4.5.min.css" />
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/jquery/font-awesome.min.css" rel="stylesheet"
-		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+<!--	<link rel="stylesheet" href="--><?php //echo base_url(); ?><!--assets/jquery/font-awesome.min.css" rel="stylesheet"-->
+<!--		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />-->
 	<script src="<?php echo base_url(); ?>assets/jquery/jquery-1.11.1.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/jquery/jquery.mobile-1.4.5.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/grid.css" />
+
+
 
 	<script src="<?php echo base_url(); ?>assets/script/common.js"></script>
 
@@ -164,15 +166,175 @@
 			margin-left: 4%;
 			margin-top: 1%;
 		}
+
+
+		/* about info  */
+		a {
+			color: #0254EB
+		}
+
+		a:visited {
+			color: #0254EB
+		}
+
+		a.morelink {
+			text-decoration: none;
+			outline: none;
+		}
+
+		.morecontent span {
+			display: none;
+		}
+
+		.comment {
+			width: 1000px;
+			background-color: #f0f0f0;
+			margin: 10px;
+		}
+
+		.icons {
+			cursor: default;
+			list-style: none;
+			padding: 0;
+			text-align: center;
+			height: 40px;
+		}
+
+		.icon {
+			text-decoration: none;
+			border-bottom: none;
+			position: relative;
+		}
+
+		.icon:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+		}
+
+		.icon > .label {
+			display: none;
+		}
+
+		.icon.style2 {
+			-moz-transition: all 0.2s ease;
+			-webkit-transition: all 0.2s ease;
+			-ms-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+			border-radius: 100%;
+			display: inline-block;
+			padding: 0.5em;
+			/* border: solid 1px; */
+			/* border-color: #38c; */
+			/* background-color: rgba(255, 255, 255, 0.075); */
+			/* background-color:#80808052; */
+		}
+
+		/* iPhone 6/7/8 potrait 375 x 667 */
+		.icon.style2:before {
+			display: block;
+			width: 1.25em;
+			height: 1.25em;
+			line-height: 1.25em;
+			font-size: 1.5em;
+			padding: 0 0 0 0;
+		}
+
+		.icon.style2:hover {
+			background-color: rgba(255, 255, 255, 0.25);
+		}
+
+		/* iPhone 6/7/8 landscape - if the width is 500px or above */
+		@media screen and (min-width: 500px) {
+
+			.icon.style2:before {
+				font-size: 2em;
+				padding: 0 0.6em 0 0;
+			}
+		}
+
+		/* iPad potrait - if the width is 700px or above */
+		@media screen and (min-width: 700px) {
+
+			.icon.style2:before {
+				font-size: 2.4em;
+				padding: 0 0.8em 0 0;
+			}
+		}
+
+		/* iPad landscape - if the width is 900px or above */
+		@media screen and (min-width: 900px) {
+
+			.icon.style2:before {
+				font-size: 2.6em;
+				padding: 0 1.3em 0 0;
+			}
+
+		}
 	</style>
+
+	<script src="<?php echo base_url(); ?>assets/script/common.js"></script>
+
 	<!-- theam config -->
 	<!-- <link rel="stylesheet" href="../assets/themes/theam1/theam_d.css" />
 	<link rel="stylesheet" href="../assets/themes/theam1/jquery.mobile.icons.min.css" /> -->
 	<!-- <link rel="stylesheet" href="../assets/themes/theam2/themes/team_e_orange.css" />
 	<link rel="stylesheet" href="../assets/themes/theam2/themes/jquery.mobile.icons.min.css" /> -->
 
+	<script>
+		$(document).ready(function () {
+			var showChar = 400;
+			var ellipsestext = "...";
+			var moretext = "more";
+			var lesstext = "less";
+			$('.more').each(function () {
+				var content = $(this).html();
+
+				if (content.length > showChar) {
+
+					var c = content.substr(0, showChar);
+					var h = content.substr(showChar - 1, content.length - showChar);
+
+					var html = c + '<span class="moreellipses">' + ellipsestext + '&nbsp;</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">' + moretext + '</a></span>';
+
+					$(this).html(html);
+				}
+
+			});
+
+			$(".morelink").click(function () {
+				if ($(this).hasClass("less")) {
+					$(this).removeClass("less");
+					$(this).html(moretext);
+				} else {
+					$(this).addClass("less");
+					$(this).html(lesstext);
+				}
+				$(this).parent().prev().toggle();
+				$(this).prev().toggle();
+				return false;
+			});
+		});
+
+
+	</script>
+
+	<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.feedback.css" type="text/css" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+		  integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
+
+
 	<title>Aboutus page</title>
 </head>
+
+
 
 <body>
 <div data-role="page" id="demo-page" class="aboutus-page" data-url="demo-page">
@@ -231,11 +393,52 @@
 
 	</div>
 
-	<!-- green lable -->
 	<div data-role="header">
-		<a data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" rel="external">Back</a>
-		<label for="title" class="title" >PRODUCT DETAIL</label>
+		<a data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext"
+		   rel="external">Back</a>
+		<label for="title" class="title">ABOUT US</label>
 		<!-- <a href="#" data-icon="check">Save</a> -->
+	</div>
+
+	<!-- green lable -->
+<!--	<div data-role="header">-->
+<!--		<a data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" rel="external">Back</a>-->
+<!--		<label for="title" class="title" >ABOUT US</label>-->
+
+<!--	</div>-->
+	<div data-role="main" class="ui-content">
+
+
+
+
+
+	<div>
+		<h4 align="center">-Our Mission-</h4>
+		<h6 align="center">To provide the most actionable app store data.</h6>
+
+		<h5 align="center">About</h5>
+
+
+
+	</div>
+	<div class="comment more" style="width: 100%;">
+		Welcome to My Market, your number one source for all things product, ie: bevagers, vegetables,
+		fruits, etc.
+		We're dedicated to giving you the very best of this market products, with a focus on dependability,
+		customer service and uniqueness.
+		Founded in 2019 by Mr. M.L Perera, My Market has come a long way from its beginnings in a home
+		office. When Mr. M.L Perera first started out, his passion for helping other parents be more
+		eco-friendly,
+		providing the best equipment for his fellow musicians drove him to do intense research, quit her day
+		job, and gave him the impetus to turn hard work and inspiration into to a booming online store.
+		We now serve customers all over the US, the world, the Austin area, and are thrilled to be a part of
+		the eco-friendly wing of the baked goods industry.
+
+		We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions
+		or comments, please don't hesitate to contact us.
+
+		Sincerely,
+		Sasini Anuthara, Co Founder
 	</div>
 
 
@@ -364,11 +567,64 @@
 		</div>
 	</div><!-- /rwd-example -->
 
+	<div align="center" style="background-color: #30343D ;">
+		<hr></hr>
+		<h5 style="font-family:sans-serif ;">Address</h5>
+		<h6  >No:01, Queen Rd, Colombo. </h6>
+		<br></br>
+		<h5 style="font-family:sans-serif ;">Latest Update</h5>
+		<h6>We added some location reveiws |2019 Feb|</h6>
+		<br></br>
+		<h5 style="font-family:sans-serif ;">Contact us</h5>
+
+		<!-- <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-mail">mail</button> -->
+		<a href="#popupLogin" rel="popup" data-position-to="window" class="ui-btn ui-shadow ui-corner-all ui-icon-mail ui-btn-icon-notext" data-transition="pop">mail</a>
+		<br></br>
+
+		<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+			    <form>
+				        <div style="padding:10px 20px;">
+					            <h3>Please sign in</h3>
+					<!--				            <label for="un" class="ui-hidden-accessible">Username:</label>-->
+					<!--				            <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">-->
+					<!--				            <label for="pw" class="ui-hidden-accessible">Password:</label>-->
+					<!--				            <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">-->
+					<!--				            <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>-->
+					        </div>
+				    </form>
+		</div>
+
+		<h4 class="texts" style="margin-left: 15px;">Follow us</h4>
+		<ul class="icons">
+			<li style="display: inline-block;"><a href="https://twitter.com/" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+			<li style="display: inline-block;"><a href="https://facebook.com/" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+			<li style="display: inline-block;"><a href="https://instagram.com/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+			<li style="display: inline-block;"><a href="https://linkedin.com/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			<li style="display: inline-block;"><a href="https://gmail.com/" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+		</ul>
+
+		<form id="frmBooking" name="bookingForm" method="post" action="_self"  >
+			<a data-role="button" class="cart-btn my-btn" id="customButton"
+			   style="background-color: #fe6311 !important; height: 40px  !important;  margin-bottom: 0px !important;  margin-top: 0px !important; color:white !important;">
+				PROCEED TO CHECKOUT
+			</a>
+		</form>
+
+	</div>
 
 
 
+<!--	<div id="feedback-anchor">-->
+<!---->
+<!--	</div>-->
+<!--	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<!--	<script src="--><?php //echo base_url(); ?><!--assets/script/jquery.feedback.js"></script>-->
+<!--	<script type="text/javascript">-->
+<!--		Feedback.init();-->
+<!--	</script>-->
 
 
+</div>
 
 
 </div>

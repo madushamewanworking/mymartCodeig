@@ -161,6 +161,11 @@
                 mapTypeId: 'roadmap'
             };
 
+            var img=document.getElementById("logo").src;
+            // alert(img);
+
+            //var img="assets/images/res/Logo.png";
+            //alert(<?php //echo base_url(); ?>//);
             // Display a map on the page
             map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
             map.setTilt(45);
@@ -253,7 +258,7 @@
 			<!-- <a href="info.html" data-icon="info-page" class="ui-btn-right" data-transition="flip" data-iconpos="notext" data-theme="a"></a> -->
 			<!-- <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-myicon"> -->
 			<img src="<?php echo base_url(); ?>assets/images/res/Logo.png" alt="Logo, Facebook" class="logo"
-				 style="float:left; display:inline; width: 36%;" />
+				id="logo" style="float:left; display:inline; width: 36%;" />
 		</div>
 		<div class="ui-block-b">
 			<div class="ui-grid-a ">
@@ -300,7 +305,7 @@
 
 <div data-role="header">
 	<a data-rel="back" style="padding: 13px;" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" rel="external">Back</a>
-	<label for="title" class="title" style="height: 50px; padding: 13px;">FAVOURITIES</label>
+	<label for="title" class="title" style="height: 50px; padding: 13px;">LOCATIONS</label>
 	<!-- <a href="#" data-icon="check">Save</a> -->
 </div>
 

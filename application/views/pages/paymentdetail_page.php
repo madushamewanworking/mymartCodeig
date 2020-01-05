@@ -179,7 +179,7 @@
 
 
 
-	<div role="main" class="ui-content">
+	<div role="main" class="ui-content"  id="paydata">
 		<ul data-role="listview" class="payment-tab" id="class-list">
 			<?php foreach ($proList as $cat){?>
 			<li class="cart-item payment-dets">
@@ -361,9 +361,9 @@
 
 							// var message=document.getElementById('qr');
 							var message= "5";
-							alert(message);
+							// alert(message);
 
-							qrcode.makeCode(message);
+							// qrcode.makeCode(message);
 
 							// if(!message.value){
 							// 	alert("Input a text");
@@ -411,12 +411,95 @@
 							var rand1 = Math.round( (imagenumber-1) * randomnumber) + 1;
 							images = new Array;
 							images[1] = "https://drive.google.com/uc?id=1KGiMGryW6Q8l5CKjWmxipNsQPJgESwVm";
-							images[2] = "https://cdn.adhigh.net/media/1569092739-uploads_5bffc2ce7e9fe.png";
+							images[2] = "https://drive.google.com/uc?id=1FaG2HofECA4bv0Z0mY0MV22P-HepbAaq";
 							images[3] = "https://drive.google.com/uc?id=1Z9Vz3qtlD2Ow1Zk2By8jo6KmaA1F3Xs_";
 							images[4] = "https://drive.google.com/uc?id=1HxGdSdDpC7M43K5icNdNIuTMtpfg_OWF";
 							images[5] = "https://drive.google.com/uc?id=1NDmdHKxStDK6YKUkotx4esxfSwtBjn7K";
 							var image = images[rand1];
 							// document.randimg.src = image
+
+							var withBreaks = "<div style='background-color: #2e8ece;'><h1>Hello World</h1>.<img src='<?php echo base_url(); ?>/assets/images/res/Logo.png'/><br /> My name is Jennifer. <br/> What is your name?</div>";
+							var favContent = $( "#paydata" ).text();
+							var totalAmountVal =document.getElementById("amount").innerText;
+							var bill="<html>\n" +
+								"\n" +
+								"<body style=\"background-color:#e2e1e0;font-family: Open Sans, sans-serif;font-size:100%;font-weight:400;line-height:1.4;color:#000;\">\n" +
+
+								"  <table style=\"max-width:670px;margin:50px auto 10px;background-color:#fff;padding:50px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);-moz-box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);box-shadow:0 1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24); border-top: solid 10px green;\">\n" +
+								" <h3>Hi! Good Afernoon Madam :)</h3>\n"+
+								"    <thead>\n" +
+								"      <tr>\n" +
+								"        <th style=\"text-align:right;font-weight:400;\">06th Jan, 2020</th>\n" +
+								"      </tr>\n" +
+								"    </thead>\n" +
+								"    <tbody>\n" +
+								"      <tr>\n" +
+								"        <td style=\"height:35px;\"></td>\n" +
+								"      </tr>\n" +
+								"      <tr>\n" +
+
+								"        <td colspan=\"2\" style=\"border: solid 1px #ddd; padding:10px 20px;\">\n" +
+								"          <p style=\"font-size:14px;margin:0 0 6px 0;\"><span style=\"font-weight:bold;display:inline-block;min-width:150px\">Current Payment status</span><b style=\"color:green;font-weight:normal;margin:0\">Success</b></p>\n" +
+								"          <p style=\"font-size:14px;margin:0 0 6px 0;\"><span style=\"font-weight:bold;display:inline-block;min-width:146px\">Account ID</span> 56789G</p>\n" +
+								// "          <p style=\"font-size:14px;margin:0 0 0 0;\"><span style=\"font-weight:bold;display:inline-block;min-width:146px\">Total Amount</span> Rs. 6000.00</p>\n" +
+								"        </td>\n" +
+								"      </tr>\n" +
+								"      <tr>\n" +
+								"        <td style=\"height:35px;\"></td>\n" +
+								"      </tr>\n" +
+								"      <tr>\n" +
+								"        <td style=\"width:50%;padding:20px;vertical-align:top\">\n" +
+
+								"          <p style=\"margin:0 0 10px 0;padding:0;font-size:14px;\"><span style=\"display:block;font-weight:bold;font-size:13px\">Name</span> Osheni Perera</p>\n" +
+								"          <p style=\"margin:0 0 10px 0;padding:0;font-size:14px;\"><span style=\"display:block;font-weight:bold;font-size:13px;\">Email</span> perera@gmail.com</p>\n" +
+								"          <p style=\"margin:0 0 10px 0;padding:0;font-size:14px;\"><span style=\"display:block;font-weight:bold;font-size:13px;\">Phone</span> +97-768340140</p>\n" +
+								"          <p style=\"margin:0 0 10px 0;padding:0;font-size:14px;\"><span style=\"display:block;font-weight:bold;font-size:13px;\">ID No.</span> 978967890v</p>\n" +
+								"        </td>\n" +
+								"        <td style=\"width:50%;padding:20px;vertical-align:top\">\n" +
+								"          <p style=\"margin:0 0 10px 0;padding:0;font-size:14px;\"><span style=\"display:block;font-weight:bold;font-size:13px;\">Address</span> No:01, Goodhope Estate, Batagoda, Horana</p>\n" +
+
+
+								"        </td>\n" +
+								"      </tr>\n" +
+								"      <tr>\n" +
+								"        <td colspan=\"2\" style=\"font-size:20px;padding:30px 15px 0 15px;\">Items</td>\n" +
+								"      </tr>\n" +
+								"      <tr>\n" +
+								"        <td colspan=\"2\" style=\"padding:15px;\">\n" +
+								"          <p style=\"font-size:14px;margin:0;padding:10px;border:solid 1px #ddd;font-weight:bold;\">\n" +
+								favContent+
+								"            </b>\n" +
+								"          </p>\n" +
+								// "          <p style=\"font-size:14px;margin:0;padding:10px;border:solid 1px #ddd;font-weight:bold;\"><span style=\"display:block;font-size:13px;font-weight:normal;\">Pickup & Drop</span> Rs. 2000 <b style=\"font-size:12px;font-weight:300;\"> /person/day</b></p>\n" +
+								// "          <p style=\"font-size:14px;margin:0;padding:10px;border:solid 1px #ddd;font-weight:bold;\"><span style=\"display:block;font-size:13px;font-weight:normal;\">Local site seeing with guide</span> Rs. 800 <b style=\"font-size:12px;font-weight:300;\"> /person/day</b></p>\n" +
+								// "          <p style=\"font-size:14px;margin:0;padding:10px;border:solid 1px #ddd;font-weight:bold;\"><span style=\"display:block;font-size:13px;font-weight:normal;\">Tea tourism with guide</span> Rs. 500 <b style=\"font-size:12px;font-weight:300;\"> /person/day</b></p>\n" +
+								// "          <p style=\"font-size:14px;margin:0;padding:10px;border:solid 1px #ddd;font-weight:bold;\"><span style=\"display:block;font-size:13px;font-weight:normal;\">River side camping with guide</span> Rs. 1500 <b style=\"font-size:12px;font-weight:300;\"> /person/day</b></p>\n" +
+								// "          <p style=\"font-size:14px;margin:0;padding:10px;border:solid 1px #ddd;font-weight:bold;\"><span style=\"display:block;font-size:13px;font-weight:normal;\">Trackking and hiking with guide</span> Rs. 1000 <b style=\"font-size:12px;font-weight:300;\"> /person/day</b></p>\n" +
+								"        </td>\n" +
+								"      </tr>\n" +
+								"      <tr>\n" +
+								"        <td colspan=\"2\" style=\"font-size:20px;padding:30px 15px 0 15px;\">Total Amount:"+totalAmountVal +"</td>\n" +
+								"      </tr>\n" +
+								"    </tbody>\n" +
+								"    <tfooter>\n" +
+								"      <tr>\n" +
+								"        <td colspan=\"2\" style=\"font-size:14px;padding:50px 15px 0 15px;\">\n" +
+								"          <strong style=\"display:block;margin:0 0 10px 0;\">Regards</strong> My market<br>No:45/B, Wellwatha Station Rd, Colombo 06, Sri Lanka<br><br>\n" +
+								"          <b>Phone:</b> 01156-22201<br>\n" +
+								"          <b>Email:</b> mymarketuiux@gmail.com\n" +
+								"          <p> Here we attached your electronical voucher with QR code. We hope you will purchase products with this discount :)</p>\n" +
+								"        </td>\n" +
+								"      </tr>\n" +
+								"    </tfooter>\n" +
+								"  </table>\n" +
+
+								"</body>\n" +
+								"\n" +
+								"</html>";
+
+
+
+							// alert(withBreaks);
 
 							Email.send({
 								Host: "smtp.gmail.com",
@@ -424,11 +507,11 @@
 								Password : "mymarket123",
 								To : 'sasiniedirisingha1997@gmail.com',
 								From : "mymarketuiux@gmail.com",
-								Subject : "Your My market Favourite list",
-								Body : "qrcode",
+								Subject : "My Market -- Recipt of payment details",
+								Body :bill,
 								Attachments : [
 									{
-										name :  "hello.png",
+										name :  "voucher.png",
 										path : image
 									}]
 							}).then(
