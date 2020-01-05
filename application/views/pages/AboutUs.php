@@ -55,12 +55,14 @@
 
 	<!-- main library -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/jquery/jquery.mobile-1.4.5.min.css" />
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/jquery/font-awesome.min.css" rel="stylesheet"
-		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+<!--	<link rel="stylesheet" href="--><?php //echo base_url(); ?><!--assets/jquery/font-awesome.min.css" rel="stylesheet"-->
+<!--		  integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />-->
 	<script src="<?php echo base_url(); ?>assets/jquery/jquery-1.11.1.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/jquery/jquery.mobile-1.4.5.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/grid.css" />
+
+
 
 	<script src="<?php echo base_url(); ?>assets/script/common.js"></script>
 
@@ -189,9 +191,93 @@
 			background-color: #f0f0f0;
 			margin: 10px;
 		}
+
+		.icons {
+			cursor: default;
+			list-style: none;
+			padding: 0;
+			text-align: center;
+			height: 40px;
+		}
+
+		.icon {
+			text-decoration: none;
+			border-bottom: none;
+			position: relative;
+		}
+
+		.icon:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+		}
+
+		.icon > .label {
+			display: none;
+		}
+
+		.icon.style2 {
+			-moz-transition: all 0.2s ease;
+			-webkit-transition: all 0.2s ease;
+			-ms-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+			border-radius: 100%;
+			display: inline-block;
+			padding: 0.5em;
+			/* border: solid 1px; */
+			/* border-color: #38c; */
+			/* background-color: rgba(255, 255, 255, 0.075); */
+			/* background-color:#80808052; */
+		}
+
+		/* iPhone 6/7/8 potrait 375 x 667 */
+		.icon.style2:before {
+			display: block;
+			width: 1.25em;
+			height: 1.25em;
+			line-height: 1.25em;
+			font-size: 1.5em;
+			padding: 0 0 0 0;
+		}
+
+		.icon.style2:hover {
+			background-color: rgba(255, 255, 255, 0.25);
+		}
+
+		/* iPhone 6/7/8 landscape - if the width is 500px or above */
+		@media screen and (min-width: 500px) {
+
+			.icon.style2:before {
+				font-size: 2em;
+				padding: 0 0.6em 0 0;
+			}
+		}
+
+		/* iPad potrait - if the width is 700px or above */
+		@media screen and (min-width: 700px) {
+
+			.icon.style2:before {
+				font-size: 2.4em;
+				padding: 0 0.8em 0 0;
+			}
+		}
+
+		/* iPad landscape - if the width is 900px or above */
+		@media screen and (min-width: 900px) {
+
+			.icon.style2:before {
+				font-size: 2.6em;
+				padding: 0 1.3em 0 0;
+			}
+
+		}
 	</style>
 
 	<script src="<?php echo base_url(); ?>assets/script/common.js"></script>
+
 	<!-- theam config -->
 	<!-- <link rel="stylesheet" href="../assets/themes/theam1/theam_d.css" />
 	<link rel="stylesheet" href="../assets/themes/theam1/jquery.mobile.icons.min.css" /> -->
@@ -238,6 +324,11 @@
 
 	<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/jquery.feedback.css" type="text/css" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css'
+		  integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
 
 
 	<title>Aboutus page</title>
@@ -315,6 +406,11 @@
 <!--		<label for="title" class="title" >ABOUT US</label>-->
 
 <!--	</div>-->
+	<div data-role="main" class="ui-content">
+
+
+
+
 
 	<div>
 		<h4 align="center">-Our Mission-</h4>
@@ -498,6 +594,15 @@
 				    </form>
 		</div>
 
+		<h4 class="texts" style="margin-left: 15px;">Follow us</h4>
+		<ul class="icons">
+			<li style="display: inline-block;"><a href="https://twitter.com/" class="icon style2 fa-twitter"><span class="label">Twitter</span></a></li>
+			<li style="display: inline-block;"><a href="https://facebook.com/" class="icon style2 fa-facebook"><span class="label">Facebook</span></a></li>
+			<li style="display: inline-block;"><a href="https://instagram.com/" class="icon style2 fa-instagram"><span class="label">Instagram</span></a></li>
+			<li style="display: inline-block;"><a href="https://linkedin.com/" class="icon style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			<li style="display: inline-block;"><a href="https://gmail.com/" class="icon style2 fa-envelope-o"><span class="label">Email</span></a></li>
+		</ul>
+
 		<form id="frmBooking" name="bookingForm" method="post" action="_self"  >
 			<a data-role="button" class="cart-btn my-btn" id="customButton"
 			   style="background-color: #fe6311 !important; height: 40px  !important;  margin-bottom: 0px !important;  margin-top: 0px !important; color:white !important;">
@@ -519,7 +624,7 @@
 <!--	</script>-->
 
 
-
+</div>
 
 
 </div>
