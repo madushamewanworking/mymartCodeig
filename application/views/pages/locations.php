@@ -179,31 +179,31 @@
                 ['<div class="info_content">' +
                 '<h4>A-MyMart-One Galle Face</h2>' +
                 '<p>Find our newest stall at One Galle Face shopping Mall.<p>' +
-                '<img src="mi.jpg"  width="350" height="150" align="center">'+
+                '<img src="http://www.dailynews.lk/sites/default/files/news/2015/09/23/z_pi-Supermarket.jpg"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>'],
                 ['<div class="info_content">' +
                 '<h3>B-MyMart-Moratuwa</h3>' +
                 '<p>Shop with us at Moratuwa KZone.</p>' +
-                '<img src="mart.jpg"  width="350" height="150" align="center">'+
+                '<img src="https://cdn-01.independent.ie/incoming/article37616241.ece/8bc17/AUTOCROP/w620/groceries%20fruitaveg%20stock.jpg"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>'],
                 ['<div class="info_content">' +
                 '<h3>C-MyMart-Maharagama</h3>' +
                 '<p>Shop with us at Maharagama.</p>' +
-                '<img src="my.jpg"  width="350" height="150" align="center">'+
+                '<img src="https://c0.wallpaperflare.com/preview/462/1010/452/supermarket-shelf-blur-yogurt-thumbnail.jpg"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>'],
                 ['<div class="info_content">' +
                 '<h3>D-MyMart-Pannipitiya</h3>' +
                 '<p>nO,53 Hapdan Lane, Pannipitiya.</p>' +
-                '<img src="myn.jpg"  width="350" height="150" align="center">'+
+                '<img src="https://c1.wallpaperflare.com/preview/956/80/1019/grocery-store-retail-supermarket.jpg"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>'],
                 ['<div class="info_content">' +
                 '<h3>E-MyMart-Cinamon Gardens</h3>' +
                 '<p>Find us at Cinamon Gardens,Colombo.</p>' +
-                '<img src="myu.jpg"  width="350" height="150" align="center">'+
+                '<img src="https://images.wallpaperscraft.com/image/mother_daughter_fruit_apples_supermarket_choice_purchase_80459_3840x2400.jpg"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>']
             ];
@@ -334,28 +334,25 @@
 		<div data-role="collapsibleset" data-corners="false" data-theme="a" data-content-theme="a">
 			 <div data-role="collapsible">
 				      <h3><center>MyMart-One Galle Face</center></h3>
-				    <p align ="justify" class="p"><img src="Logo.png" width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
+				   <p style="text-align: center" class="p">Our  MyMart supermarket is a self-service store offering a wide variety of food, beverages and household products, organized into sections. It is larger and has a wider selection than earlier grocery stores, but is smaller and more limited in the range of merchandise than a hypermarket or big-box market.  </p>
 				    </div>
 
 			<!-- Store 2 collapsible section -->
 			    <div data-role="collapsible">
 				      <h3><center>MyMart-Moratuwa</center></h3>
-				    <p align ="justify" class="p"><img src="Logo.png"  width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
+				    <p style="text-align: center"  class="p">Our  MyMart supermarket is a self-service store offering a wide variety of food, beverages and household products, organized into sections. It is larger and has a wider selection than earlier grocery stores, but is smaller and more limited in the range of merchandise than a hypermarket or big-box market.  </p>
 				    </div>
 			<!--Store 3 collapsible section -->
 			    <div data-role="collapsible">
 				       <h3><center>MyMart-Maharagama</center></h3>
-				   <p align ="justify" class="p"><img src="Logo.png"  width="120" height="1000"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
+				   <p style="text-align: center" class="p">Our  MyMart supermarket is a self-service store offering a wide variety of food, beverages and household products, organized into sections. It is larger and has a wider selection than earlier grocery stores, but is smaller and more limited in the range of merchandise than a hypermarket or big-box market.  </p>
 				<!-- Store 4 collapsible section -->
 				    </div> <div data-role="collapsible">
 				       <h3><center>MyMart-Pannipitiya</center></h3>
-				    <p align ="justify" class="p"><img src="Logo.png"  width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
+				    <p style="text-align: center" class="p">No.53, Hampdan Lane, Wellawatta,Colombo 06</p>
 				    </div>
 			<!-- Store  collapsible section -->
-			 <div data-role="collapsible">
-				       <h3><center>MyMart-Cinamon Gardens</center></h3>
-				  <p align ="justify" class="p"><img src="Logo.png"  width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
-				    </div>
+			 
 
 
 
