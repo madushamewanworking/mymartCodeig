@@ -61,4 +61,8 @@ class AccountController extends CI_Controller
 
 		$this->load->view('pages/AccountPage');
 	}
+
+	public function loadLocationPage(){
+		$this->load->view('pages/locations');
+	}
 }

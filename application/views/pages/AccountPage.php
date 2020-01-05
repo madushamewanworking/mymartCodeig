@@ -174,7 +174,7 @@ $username= $this->session->userdata('username');
 			<div class="ui-body ui-body-d">
 				<a href="<?php echo base_url();?>index.php/AccountController/editAccountDisplay" class="ui-btn ui-shadow ui-corner-all" data-ajax="false">Edit Account</a>
 				<a href="<?php echo base_url(); ?>index.php/favouritescontroller" class="ui-btn ui-shadow ui-corner-all" data-ajax="false">Favourites</a>
-				<a href="#two" class="ui-btn ui-shadow ui-corner-all">Payment History</a>
+				<a href="<?php echo base_url(); ?>index.php/AccountController/loadLocationPage" class="ui-btn ui-shadow ui-corner-all" data-ajax="false">Nearest Locations</a>
 
 			</div>
 		</div>
