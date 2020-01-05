@@ -429,7 +429,6 @@
 								" <h3>Hi! Good Afernoon Madam :)</h3>\n"+
 								"    <thead>\n" +
 								"      <tr>\n" +
-								"        <th style=\"text-align:left;\"><img style=\"max-width: 150px;\" src="<?php echo base_url(); ?>assets/images/res/Logo.png" alt=\"My market\"></th>\n" +
 								"        <th style=\"text-align:right;font-weight:400;\">06th Jan, 2020</th>\n" +
 								"      </tr>\n" +
 								"    </thead>\n" +

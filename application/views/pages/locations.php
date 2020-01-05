@@ -161,6 +161,11 @@
                 mapTypeId: 'roadmap'
             };
 
+            var img=document.getElementById("logo").src;
+            // alert(img);
+
+            //var img="assets/images/res/Logo.png";
+            //alert(<?php //echo base_url(); ?>//);
             // Display a map on the page
             map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
             map.setTilt(45);
@@ -179,31 +184,31 @@
                 ['<div class="info_content">' +
                 '<h4>A-MyMart-One Galle Face</h2>' +
                 '<p>Find our newest stall at One Galle Face shopping Mall.<p>' +
-                '<img src="mi.jpg"  width="350" height="150" align="center">'+
+                '<img src="'+img+'"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>'],
                 ['<div class="info_content">' +
                 '<h3>B-MyMart-Moratuwa</h3>' +
                 '<p>Shop with us at Moratuwa KZone.</p>' +
-                '<img src="mart.jpg"  width="350" height="150" align="center">'+
+                '<img src="'+img+'"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>'],
                 ['<div class="info_content">' +
                 '<h3>C-MyMart-Maharagama</h3>' +
                 '<p>Shop with us at Maharagama.</p>' +
-                '<img src="my.jpg"  width="350" height="150" align="center">'+
+                '<img src="'+img+'"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>'],
                 ['<div class="info_content">' +
                 '<h3>D-MyMart-Pannipitiya</h3>' +
                 '<p>nO,53 Hapdan Lane, Pannipitiya.</p>' +
-                '<img src="myn.jpg"  width="350" height="150" align="center">'+
+                '<img src="'+img+'"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>'],
                 ['<div class="info_content">' +
                 '<h3>E-MyMart-Cinamon Gardens</h3>' +
                 '<p>Find us at Cinamon Gardens,Colombo.</p>' +
-                '<img src="myu.jpg"  width="350" height="150" align="center">'+
+                '<img src="'+img+'"  width="350" height="150" align="center">'+
                 '<p align="justify">No.53, Fussels Lane, Colombo.<br> Tel: 0112568374 <br> <a href="https://www.google.com">www.Mymart.com</a><p>' +
                 '</div>']
             ];
@@ -253,7 +258,7 @@
 			<!-- <a href="info.html" data-icon="info-page" class="ui-btn-right" data-transition="flip" data-iconpos="notext" data-theme="a"></a> -->
 			<!-- <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-myicon"> -->
 			<img src="<?php echo base_url(); ?>assets/images/res/Logo.png" alt="Logo, Facebook" class="logo"
-				 style="float:left; display:inline; width: 36%;" />
+				id="logo" style="float:left; display:inline; width: 36%;" />
 		</div>
 		<div class="ui-block-b">
 			<div class="ui-grid-a ">
@@ -300,7 +305,7 @@
 
 <div data-role="header">
 	<a data-rel="back" style="padding: 13px;" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext" rel="external">Back</a>
-	<label for="title" class="title" style="height: 50px; padding: 13px;">FAVOURITIES</label>
+	<label for="title" class="title" style="height: 50px; padding: 13px;">LOCATIONS</label>
 	<!-- <a href="#" data-icon="check">Save</a> -->
 </div>
 
@@ -334,27 +339,27 @@
 		<div data-role="collapsibleset" data-corners="false" data-theme="a" data-content-theme="a">
 			 <div data-role="collapsible">
 				      <h3><center>MyMart-One Galle Face</center></h3>
-				    <p align ="justify" class="p"><img src="Logo.png" width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
+				    <p align ="justify" class="p"><img src="<?php echo base_url(); ?>assets/images/res/Logo.png" width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
 				    </div>
 
 			<!-- Store 2 collapsible section -->
 			    <div data-role="collapsible">
 				      <h3><center>MyMart-Moratuwa</center></h3>
-				    <p align ="justify" class="p"><img src="Logo.png"  width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
+				    <p align ="justify" class="p"><img src="<?php echo base_url(); ?>assets/images/res/Logo.png"  width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
 				    </div>
 			<!--Store 3 collapsible section -->
 			    <div data-role="collapsible">
 				       <h3><center>MyMart-Maharagama</center></h3>
-				   <p align ="justify" class="p"><img src="Logo.png"  width="120" height="1000"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
+				   <p align ="justify" class="p"><img src="<?php echo base_url(); ?>assets/images/res/Logo.png"  width="120" height="1000"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
 				<!-- Store 4 collapsible section -->
 				    </div> <div data-role="collapsible">
 				       <h3><center>MyMart-Pannipitiya</center></h3>
-				    <p align ="justify" class="p"><img src="Logo.png"  width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
+				    <p align ="justify" class="p"><img src="<?php echo base_url(); ?>assets/images/res/Logo.png"  width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
 				    </div>
 			<!-- Store  collapsible section -->
 			 <div data-role="collapsible">
 				       <h3><center>MyMart-Cinamon Gardens</center></h3>
-				  <p align ="justify" class="p"><img src="Logo.png"  width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
+				  <p align ="justify" class="p"><img src="<?php echo base_url(); ?>assets/images/res/Logo.png"  width="120" height="80"/>No.53, Hampdan Lane, Wellawatta, Colombo 06</p>
 				    </div>
 
 
