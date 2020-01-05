@@ -1,0 +1,55 @@
+
+   
+.title {
+    min-height: 1.2em;
+    text-align: center;
+    font-size: 10px;
+    display: block;
+    margin: .2em 30% .8em;
+    padding: 10;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    outline: 0 !important;
+    border: 1px solid #56A00E;
+    background: #74b042;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 1px 1px #335413;
+}
+
+.ui-content {
+    padding: 0em;
+    background-color: white;
+}
+
+.ui-mobile label {
+    font-size: 20px;
+    font-weight: 200;
+    font-family: 'Century Gothic';
+    margin: 0 0 0;
+}
+.Btn {
+    background-color:white;
+   color: violet;
+}
+.Sec-Img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 3px;
+    width: 80px;
+    height: 55px;
+    float: left;
+}
+
+.p{
+  
+    text-align: right;
+    font-size: 15px;
+}
+.ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a {
+    background-color: #d4ecc3;
+    border-color: #ddd;
+    color: #333;
+    text-shadow: 0 1px 0 #f3f3f3;
+}

@@ -169,8 +169,8 @@
 	<div data-role="footer" data-id="foo1" data-position="fixed">
 		<div data-role="navbar" data-iconpos="top">
 			<ul>
-				<li><a href="../views/HomePage.html" data-icon="home" rel="external"
-					>Home</a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/maincontroller" data-icon="home" rel="external">Home</a></li>
+
 				<li><a href="<?php echo base_url(); ?>index.php/maincontroller" data-icon="grid" rel="external">Category</a></li>
 				<li><a href="<?php echo base_url(); ?>index.php/categorycontroller" data-icon="alert" rel="external">Cart</a></li>
 				<li><a href="<?php echo base_url(); ?>index.php/promotioncontroller" data-icon="star" rel="external" class="ui-btn-active ui-state-persist">Promotions</a></li>
