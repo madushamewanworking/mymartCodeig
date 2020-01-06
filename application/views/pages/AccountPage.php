@@ -191,9 +191,80 @@ $username= $this->session->userdata('username');
 
 				<a href="<?php echo base_url(); ?>index.php/auth/logout"  rel="external" class="ui-shadow ui-btn ui-corner-all "
 				   style="background-color: #FE6311 !important; color: white !important;" data-rel="dialog" data-position-to="window">Logout</a>
+
+				<a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Sign in</a>
+
 			</div>
 			<!-- <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-shadow ui-corner-all" data-transition="pop">Sign in</a> -->
+			<div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+				    <form id="formFeedBack" method="post" action="_self">
+					        <div style="padding:10px 20px;">
+						            <h3>FeedBack</h3>
+						            
+<!--						            <input type="text" name="user" id="un" value="" placeholder="Let us know your feedback..." data-theme="a">-->
+						<textarea name="user" placeholder="Let us know your feedback..." value=""></textarea>
+						            
+						            
+						            <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Send</button>
 
+						        </div>
+				    </form>
+
+
+				<script src="https://smtpjs.com/v3/smtp.js"></script>
+				<script type="text/javascript">
+
+					jQuery(function($){
+						var $form = $('#formFeedBack');
+						var handler = StripeCheckout.configure({
+							key:'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+							token : function(token){
+								if(token.id){
+
+									document.getElementById("formFeedBack").remove();
+									$( ".success" ).popup( );
+									$( ".success" ).popup("open");
+									// $("#thankyouPayment").html("Thank you")
+
+									Email.send({
+										Host: "smtp.gmail.com",
+										Username : "mymarketuiux@gmail.com",
+										Password : "mymarket123",
+										To : 'sasiniedirisingha1997@gmail.com',
+										From : "mymarketuiux@gmail.com",
+										Subject : "My Market -- Recipt of payment details",
+										Body :"hello",
+										Attachments : [
+											{
+												name :  "voucher.png",
+												path : "image"
+											}]
+									}).then(
+										message => alert("email sent success")
+
+									);
+
+
+								}
+							}
+						})
+
+						// $('#customButton').on('click', function(e) {
+						// 	var price = document.getElementById("pay").innerText;
+						// 	var amount=price*100;
+						// 	handler.open({
+						// 		name : 'My Market Payment',
+						// 		currency: 'LKR',
+						// 		amount: amount
+						// 	});
+						//
+						// 	$(window).on('popstate', function(){
+						// 		handler.close();
+						// 	});
+						// });
+					});
+				</script>
+			</div>
 
 			<div data-role="popup" id="popupqrcode" data-theme="a" class="ui-corner-all">
 				<!--     <form> -->
