@@ -140,25 +140,39 @@
 		<div class="ui-block-a">
 			<div class="ui-body ui-body-d">
 
-				<h2>Leaderboard</h2>
-				<p>One of the worst-kept secrets in tech has been confirmed: Apple will hold an event October 23 in San Jose, California, at which the company is widely expected to unveil a smaller, cheaper version of its popular iPad called "Mini".</p>
+				<h4 >What is Leaderboard ?</h4>
+				<div class="comment more"><p>Furthermore, the main part of the gamification is the Leaderboard. The position of the leaderboard will be arranged depending on the Levels of the user (The number of times the user has purchased from the store). In this scenario, the user who has purchased highest nu of times from the store will be on the top of the leaderboard</p></div>
 			</div>
 		</div>
 		<!-- secondary story block #1 -->
 		<div class="ui-block-b">
 			<div class="ui-body ui-body-d">
-				<img src="../assets/images/res/Logo.png" class="img-fluid"  style=" display: block; margin-left: auto; margin-right: auto; width: 100%; max-height: 100px;" alt="Responsive image">
-				<h4>Promotion 02</h4>
-				<p>The Microsoft Surface tablet picture has come into focus. The Redmond giant filled in the blanks on the new tablet's availability and specs.</p>
+				<img src="https://cmkt-image-prd.freetls.fastly.net/0.1.0/ps/5674694/600/400/m2/fpnw/wm1/v383-kul-19-saletags-cover-.jpg?1547043431&s=daee6ff0ca82114f07c51cd8f02a3c6d" class="img-fluid"  style=" display: block; margin-left: auto; margin-right: auto; width: 100%; max-height: 100px;" alt="Responsive image">
+				<h4>Level Based Promotions</h4>
+				<div class="comment more"><p>This type of promotions will be applied according to the position of the leaderboard. For an instance
+						this promotion will be applied to the first 5 or 10 people in the leaderboard. And the promotion value will be
+						also depending on the position of the leaderboard.
+
+						To elaborate this further, the highest person will be able to receive best value of the promotion than a
+						person who is in the 10th o 5th position of the leaderboard.
+
+						This marketing strategy encourages users to purchase more times from the store and to get in to a good position
+						in the leaderboard because that is the only way they will be able to receive best value for promotions.
+						creates a competition among users and at the same time it also increases purchases of the supermarket.</p></div>
+
 			</div>
 		</div>
 		<!-- secondary story block #2 -->
 		<div class="ui-block-c">
 			<div class="ui-body ui-body-d">
-				<img src="../assets/images/res/Logo.png" class="img-fluid"  style=" display: block; margin-left: auto; margin-right: auto; width: 100%; max-height: 100px;" alt="Responsive image">
+				<img src="https://i.ytimg.com/vi/K3aWicbRkro/maxresdefault.jpg" class="img-fluid"  style=" display: block; margin-left: auto; margin-right: auto; width: 100%; max-height: 100px;" alt="Responsive image">
 
-				<h4>Promotion 02</h4>
-				<p>AOL, struggling to shed its outdated image, is reimagining one of the most visibly aging parts of its platform: Its email service. </p>
+				<h4>Reward Based Promotions</h4>
+				<p>This promotion will be applied to every user who purchases more than LKR 1000.00 from the store. If the user has purchases more 1000.00 rs from the store, he/she will be getting points. And these points can be redeemed in their next purchase. In fact, these promotions will be based on their bill value.
+
+					All the customers will be getting a QR scan code printed on their bill and they will be able scan this QR code to see their earned points. In the next purchase, customers can redeem these earned points.
+
+				</p>
 			</div>
 		</div>
 	</div><!-- /rwd-example -->
